@@ -1,0 +1,14 @@
+---
+interface Props { name: string; business: string; location: string; quote: string; rating: number; }
+const { name, business, location, quote, rating } = Astro.props;
+---
+<div class="glow-frame panel-highlight glass rounded-xl p-8">
+  <div class="flex gap-1 mb-4">
+    {Array.from({length: rating}).map(() => <span class="text-yellow-400">★</span>)}
+  </div>
+  <p class="text-muted-200 italic leading-relaxed mb-6">"{quote}"</p>
+  <div>
+    <p class="font-heading font-semibold text-muted-100">{name}</p>
+    <p class="text-sm text-muted-300">{business}, {location}</p>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PortfolioCard from '../components/ui/PortfolioCard.astro';
+import Button from '../components/ui/Button.astro';
+import { projects, categories } from '../data/portfolio';
+---
+<BaseLayout title="Portfolio — SiteGenius" description="See websites we've built for NZ businesses.">
+  <section class="pt-32 pb-16 grid-bg">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">Our <span class="gradient-text">Work</span></h1>
+      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">A showcase of websites we've built for New Zealand businesses.</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-custom">
+      <!-- Filter -->
+      <div class="flex flex-wrap gap-3 mb-12 animate-on-scroll">
+        {categories.map((cat, i) => (
+          <button data-filter={cat} class={`portfolio-filter px-4 py-2 rounded-full text-sm font-medium transition-all ${i === 0 ? 'bg-neon-cyan text-space-900' : 'bg-space-700/50 text-muted-200 hover:bg-space-600/50 hover:text-muted-100'}`}>{cat}</button>
+        ))}
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        {projects.map((project) => (
+          <div class="animate-on-scroll portfolio-item" data-category={project.category}>
+            <PortfolioCard {...project} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-space-800/50">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl font-heading font-bold mb-4 animate-on-scroll">Want your business <span class="gradient-text">here?</span></h2>
+      <p class="text-xl text-muted-200 mb-8 animate-on-scroll">Let's make it happen.</p>
+      <div class="animate-on-scroll"><Button href="/get-a-quote" class="text-lg">Start Your Project</Button></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const filters = document.querySelectorAll('.portfolio-filter');
+  const items = document.querySelectorAll('.portfolio-item');
+
+  filters.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      filters.forEach((node, index) => {
+        node.classList.toggle('bg-neon-cyan', node === button);
+        node.classList.toggle('text-space-900', node === button);
+        if (node !== button && index !== 0) {
+          node.classList.add('bg-space-700/50', 'text-muted-200');
+        }
+      });
+
+      items.forEach((item) => {
+        const matches = filter === 'All' || item.getAttribute('data-category') === filter;
+        item.classList.toggle('hidden', !matches);
+      });
+    });
+  });
+</script>

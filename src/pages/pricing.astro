@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingCard from '../components/ui/PricingCard.astro';
+import FAQItem from '../components/ui/FAQItem.astro';
+import { subscriptionPlans, websitePackages } from '../data/pricing';
+import { faqs } from '../data/faq';
+---
+<BaseLayout title="Pricing — SiteGenius" description="Simple, honest pricing for NZ web design. Monthly plans from $79/mo or one-time from $499.">
+  <section class="pt-32 pb-16 grid-bg">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">Simple, Honest <span class="gradient-text">Pricing</span></h1>
+      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">No hidden fees. No lock-in surprises. Just great websites.</p>
+    </div>
+  </section>
+
+  <!-- Monthly Subscriptions -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll">
+        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 border border-neon-cyan/20 rounded-full px-4 py-1.5 mb-4">
+          <span class="text-sm font-heading font-semibold gradient-text">Recommended</span>
+        </div>
+        <h2 class="text-3xl font-heading font-bold mb-4">Monthly <span class="gradient-text">Plans</span></h2>
+        <p class="text-muted-200 max-w-2xl mx-auto">No big upfront cost. Everything included. Cancel after 12 months anytime.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {subscriptionPlans.map((plan) => (
+          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
+        ))}
+      </div>
+      <p class="text-center text-sm text-muted-300 mt-8 animate-on-scroll">All plans include hosting, SSL, and domain setup. 12-month minimum term, then month-to-month. Prices exclude GST.</p>
+    </div>
+  </section>
+
+  <!-- One-Time -->
+  <section class="section-padding bg-space-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-heading font-bold mb-4">Prefer to <span class="gradient-text">Pay Upfront?</span></h2>
+        <p class="text-muted-200 max-w-2xl mx-auto">One-time fee, your website forever. Hosting and maintenance charged separately.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {websitePackages.map((plan) => (
+          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
+        ))}
+      </div>
+      <p class="text-center text-sm text-muted-300 mt-8 animate-on-scroll">Prices exclude GST. Hosting from $25/month extra.</p>
+    </div>
+  </section>
+
+  <!-- Custom -->
+  <section class="section-padding">
+    <div class="container-custom text-center">
+      <div class="glass rounded-2xl p-12 max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl font-heading font-bold mb-4">Need Something <span class="gradient-text">Bigger?</span></h2>
+        <p class="text-muted-200 mb-8">E-commerce stores, booking systems, custom features — we'll build exactly what you need.</p>
+        <a href="/get-a-quote" class="btn-primary text-lg">Get a Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Always Included -->
+  <section class="section-padding bg-space-800/50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">Always <span class="gradient-text">Included</span></h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+        {[
+          { icon: '📱', label: 'Mobile-Responsive' },
+          { icon: '🔒', label: 'SSL Certificate' },
+          { icon: '🇳🇿', label: 'NZ Hosting' },
+          { icon: '🔍', label: 'SEO Basics' },
+          { icon: '⚡', label: 'Speed Optimised' },
+          { icon: '🛟', label: 'Ongoing Support' },
+        ].map(item => (
+          <div class="glass rounded-xl p-6 text-center animate-on-scroll">
+            <span class="text-3xl mb-3 block">{item.icon}</span>
+            <p class="text-sm font-heading font-semibold text-muted-100">{item.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding">
+    <div class="container-custom max-w-3xl">
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <div class="animate-on-scroll">
+        {faqs.map((faq) => <FAQItem question={faq.question} answer={faq.answer} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      const content = document.getElementById(target!);
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = !content?.classList.contains('hidden');
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+      if (!isOpen) { content?.classList.remove('hidden'); icon?.classList.add('rotate-180'); }
+    });
+  });
+</script>

@@ -1,0 +1,21 @@
+---
+interface Props { title: string; description: string; icon: string; }
+const { title, description, icon } = Astro.props;
+const icons: Record<string, string> = {
+  code: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+  server: 'M5 12H3m18 0h-2M5 12a7 7 0 0114 0M5 12a7 7 0 0014 0M12 5V3m0 18v-2',
+  mail: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+  shield: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+};
+---
+<div class="glow-frame panel-highlight glass-hover group rounded-xl p-8 hover:-translate-y-1">
+  <div class="w-12 h-12 rounded-lg bg-neon-cyan/10 flex items-center justify-center mb-5 group-hover:bg-neon-cyan/20 transition-colors shadow-[0_0_20px_rgba(0,229,255,0.08)]">
+    <svg class="w-6 h-6 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d={icons[icon] || icons.code}/></svg>
+  </div>
+  <h3 class="text-lg font-heading font-bold text-muted-100 mb-2">{title}</h3>
+  <p class="text-muted-200 text-sm leading-relaxed mb-4">{description}</p>
+  <a href="/services" class="inline-flex items-center gap-2 text-neon-cyan text-sm font-medium hover:text-neon-teal transition-colors">
+    Learn More
+    <span class="transition-transform group-hover:translate-x-1">→</span>
+  </a>
+</div>

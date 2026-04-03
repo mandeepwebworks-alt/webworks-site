@@ -1,0 +1,29 @@
+---
+const steps = [
+  { step: '01', title: 'Chat', desc: 'We learn about your business and what you need.' },
+  { step: '02', title: 'Design', desc: 'We create your dream website.' },
+  { step: '03', title: 'Build', desc: 'We bring it to life with clean, modern code.' },
+  { step: '04', title: 'Launch', desc: 'You go live and start getting more enquiries.' },
+];
+---
+<section class="section-padding bg-space-800/40">
+  <div class="container-custom">
+    <div class="mx-auto mb-16 max-w-2xl text-center animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl">Simple Process, <span class="gradient-text">Stunning Results</span></h2>
+    </div>
+    <div class="grid gap-10 md:grid-cols-4">
+      {steps.map((item, index) => (
+        <div class="relative text-center animate-on-scroll">
+          {index < steps.length - 1 && (
+            <div class="absolute left-[calc(50%+2rem)] top-8 hidden h-px w-[calc(100%-4rem)] border-t border-dashed border-neon-cyan/30 md:block"></div>
+          )}
+          <div class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-neon-cyan/25 bg-gradient-to-br from-neon-cyan/10 to-neon-purple/15 shadow-glow">
+            <span class="font-heading text-lg font-bold gradient-text">{item.step}</span>
+          </div>
+          <h3 class="text-lg font-heading font-bold text-muted-100">{item.title}</h3>
+          <p class="mt-3 text-sm leading-7 text-muted-200">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

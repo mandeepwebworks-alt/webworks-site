@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout title="About — SiteGenius" description="Meet the person behind SiteGenius. NZ-based web design with automotive industry expertise.">
+  <section class="pt-32 pb-16 grid-bg">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">The Person Behind <span class="gradient-text">the Pixels</span></h1>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="animate-on-scroll">
+          <div class="aspect-square max-w-md mx-auto rounded-2xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 border border-white/5 flex items-center justify-center">
+            <div class="text-center">
+              <span class="text-6xl mb-4 block">👨‍💻</span>
+              <p class="text-muted-300 text-sm">Photo coming soon</p>
+            </div>
+          </div>
+        </div>
+        <div class="animate-on-scroll">
+          <h2 class="text-2xl font-heading font-bold mb-6">Hey, I'm the person behind <span class="gradient-text">SiteGenius</span>.</h2>
+          <div class="space-y-4 text-muted-200 leading-relaxed">
+            <p>I started SiteGenius because I saw too many local businesses either paying way too much for a basic website, or struggling with DIY builders that never quite looked right.</p>
+            <p>With a background in both the <strong class="text-muted-100">automotive industry</strong> and <strong class="text-muted-100">IT</strong>, I bring a unique perspective. I understand what it's like to run a hands-on business — and I know that your website should work as hard as you do.</p>
+            <p>I use the latest <strong class="text-muted-100">AI-powered tools</strong> and <strong class="text-muted-100">modern web technologies</strong> to build websites faster and more affordably than traditional agencies — and I pass those savings directly on to you.</p>
+            <p>Based in <strong class="text-muted-100">New Zealand</strong>, working with businesses across the country.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="section-padding bg-space-800/50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">Why Work <span class="gradient-text">With Us?</span></h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: '🤝', title: 'One Point of Contact', desc: 'You deal directly with me. No account managers, no runarounds. Just straight-up honest communication.' },
+          { icon: '🇳🇿', title: 'NZ-Based Support', desc: "I'm right here in New Zealand. Same timezone, same understanding of local business." },
+          { icon: '💬', title: 'Plain English', desc: 'No jargon, no tech-speak. I explain everything in words that actually make sense.' },
+          { icon: '💰', title: 'Fair, Transparent Pricing', desc: 'What you see is what you pay. No hidden fees, no surprise invoices.' },
+        ].map(item => (
+          <div class="glass-hover rounded-xl p-8 text-center animate-on-scroll">
+            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <h3 class="text-lg font-heading font-bold text-muted-100 mb-2">{item.title}</h3>
+            <p class="text-sm text-muted-200">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">Tools of the <span class="gradient-text">Trade</span></h2>
+      <div class="flex flex-wrap justify-center gap-4 animate-on-scroll">
+        {['HTML5', 'CSS3', 'JavaScript', 'React', 'Astro', 'Tailwind CSS', 'WordPress', 'Shopify', 'Google Analytics', 'Figma', 'Node.js', 'Git'].map(t => (
+          <span class="glass rounded-lg px-4 py-2 text-sm text-muted-200 font-mono">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Ready to work together?"
+    description="Let's have a chat about your project."
+    href="/contact"
+    label="Get in Touch"
+  />
+</BaseLayout>

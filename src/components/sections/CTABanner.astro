@@ -1,0 +1,25 @@
+---
+import Button from '../ui/Button.astro';
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  label: string;
+}
+const { title, description, href, label } = Astro.props;
+---
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-space-800 px-8 py-14 text-center shadow-[0_0_60px_rgba(0,229,255,0.08)] md:px-16">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(0,229,255,0.12),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.16),_transparent_30%)]"></div>
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neon-cyan to-transparent"></div>
+      <div class="relative z-10">
+        <h2 class="text-3xl md:text-5xl">{title}</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg text-muted-200">{description}</p>
+        <div class="mt-8">
+          <Button href={href} class="text-lg">{label}</Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,14 @@
+---
+interface Props { question: string; answer: string; }
+const { question, answer } = Astro.props;
+const id = question.toLowerCase().replace(/[^a-z0-9]/g, '-').slice(0, 30);
+---
+<div class="border-b border-white/5">
+  <button class="faq-toggle w-full flex items-center justify-between py-5 text-left group" data-target={id}>
+    <span class="font-heading font-semibold text-muted-100 group-hover:text-neon-cyan transition-colors pr-4">{question}</span>
+    <svg class="w-5 h-5 text-muted-300 transition-transform faq-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+  </button>
+  <div id={id} class="faq-content hidden pb-5">
+    <p class="text-muted-200 text-sm leading-relaxed">{answer}</p>
+  </div>
+</div>

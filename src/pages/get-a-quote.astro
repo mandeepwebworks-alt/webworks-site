@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteForm from '../components/interactive/QuoteForm';
+---
+<BaseLayout title="Get a Quote — SiteGenius" description="Get a free, no-obligation quote for your website project.">
+  <section class="pt-32 pb-16 grid-bg">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">Tell Us About <span class="gradient-text">Your Project</span></h1>
+      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">Fill out the form below and we'll get back to you within 24 hours with a free, no-obligation quote.</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-custom max-w-3xl">
+      <QuoteForm client:load />
+    </div>
+  </section>
+</BaseLayout>

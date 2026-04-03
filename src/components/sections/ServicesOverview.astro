@@ -1,0 +1,20 @@
+---
+import ServiceCard from '../ui/ServiceCard.astro';
+import { services } from '../../data/services';
+---
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="mx-auto mb-16 max-w-2xl text-center animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl">What We <span class="gradient-text">Do</span></h2>
+      <div class="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-neon-cyan to-transparent"></div>
+      <p class="mt-6 text-muted-200">Everything you need to get your business online and keep it running smoothly.</p>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {services.map((service) => (
+        <div class="animate-on-scroll">
+          <ServiceCard title={service.title} description={service.description} icon={service.icon} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

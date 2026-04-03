@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import ServicesOverview from '../components/sections/ServicesOverview.astro';
+import Process from '../components/sections/Process.astro';
+import PricingTeaser from '../components/sections/PricingTeaser.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout title="SiteGenius — Web Design for NZ Businesses">
+  <Hero />
+  <ServicesOverview />
+  <Process />
+  <PricingTeaser />
+  <Testimonials />
+  <CTABanner
+    title="Ready to Get Online?"
+    description="Let's build something your customers will love."
+    href="/get-a-quote"
+    label="Get Your Free Quote"
+  />
+</BaseLayout>

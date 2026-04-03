@@ -1,0 +1,24 @@
+---
+import PricingCard from '../ui/PricingCard.astro';
+import Button from '../ui/Button.astro';
+import { subscriptionPlans } from '../../data/pricing';
+---
+<section class="section-padding">
+  <div class="container-custom">
+    <div class="mx-auto mb-14 max-w-3xl text-center animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl">Pricing That <span class="gradient-text">Makes Sense</span></h2>
+      <p class="mt-6 text-muted-200">Choose a one-time build or a monthly plan — whatever works for your business.</p>
+    </div>
+    <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
+      {subscriptionPlans.map((plan) => (
+        <div class="animate-on-scroll">
+          <PricingCard {...plan} features={plan.features.slice(0, 4)} />
+        </div>
+      ))}
+    </div>
+    <div class="mt-8 text-center animate-on-scroll">
+      <p class="mb-4 text-sm text-muted-300">12-month minimum. Prices excl. GST.</p>
+      <Button href="/pricing" variant="secondary" class="mx-auto">See All Pricing Options →</Button>
+    </div>
+  </div>
+</section>

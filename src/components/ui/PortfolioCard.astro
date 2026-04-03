@@ -1,0 +1,21 @@
+---
+interface Props { title: string; category: string; description: string; tags: string[]; gradient: string; }
+const { title, category, description, tags, gradient } = Astro.props;
+---
+<div class="glow-frame panel-highlight glass-hover group overflow-hidden rounded-xl hover:-translate-y-1">
+  <div class={`relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br ${gradient}`}>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.12),_transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.04),transparent)]"></div>
+    <span class="relative text-4xl font-heading font-bold text-white/25 transition-colors group-hover:text-white/35">{title.split(' ').map(w => w[0]).join('')}</span>
+    <div class="absolute inset-0 flex items-center justify-center bg-space-900/0 opacity-0 transition-all group-hover:bg-space-900/40 group-hover:opacity-100">
+      <span class="text-sm font-heading font-semibold text-white">View Project</span>
+    </div>
+  </div>
+  <div class="p-6">
+    <span class="text-xs font-medium text-neon-cyan bg-neon-cyan/10 px-2 py-1 rounded-full">{category}</span>
+    <h3 class="text-lg font-heading font-bold text-muted-100 mt-3 mb-2">{title}</h3>
+    <p class="text-sm text-muted-200 leading-relaxed mb-4">{description}</p>
+    <div class="flex flex-wrap gap-2">
+      {tags.map(t => <span class="text-xs text-muted-300 bg-space-600/50 px-2 py-1 rounded">{t}</span>)}
+    </div>
+  </div>
+</div>

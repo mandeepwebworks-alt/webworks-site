@@ -1,0 +1,151 @@
+---
+import Button from '../ui/Button.astro';
+---
+<section class="relative min-h-screen overflow-hidden grid-bg">
+  <div class="pointer-events-none absolute inset-0">
+    <div class="mesh-blob -left-24 top-20 h-80 w-80 bg-neon-cyan/15"></div>
+    <div class="mesh-blob bottom-10 right-[-6rem] h-[28rem] w-[28rem] bg-neon-purple/15 [animation-delay:1.5s]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,229,255,0.08),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.1),_transparent_30%)]"></div>
+  </div>
+  <div class="container-custom relative z-10 flex min-h-screen items-center pt-28">
+    <div class="grid w-full items-center gap-14 lg:grid-cols-[minmax(0,1fr)_26rem]">
+    <div class="max-w-3xl">
+      <div class="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-muted-200 animate-fade-in">
+        <span>🚀</span>
+        <span>NZ's Smartest Web Design</span>
+      </div>
+      <h1 class="mt-8 text-5xl font-heading font-bold leading-tight text-muted-100 md:text-7xl animate-slide-up">
+        Websites That Work
+        <br />
+        <span class="gradient-text">As Hard As You Do</span>
+      </h1>
+      <p class="mt-6 text-lg text-muted-200 md:text-xl animate-slide-up [animation-delay:120ms]">
+        We build websites for
+        <span id="typed-text" class="ml-2 font-semibold text-neon-cyan">plumbers</span>
+      </p>
+      <p class="mt-4 max-w-2xl text-base leading-8 text-muted-200 animate-slide-up [animation-delay:220ms] md:text-lg">
+        Professional, lightning-fast websites for New Zealand businesses. No jargon. No nonsense. Just results.
+      </p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row animate-slide-up [animation-delay:320ms]">
+        <Button href="/get-a-quote">Get a Free Quote</Button>
+        <Button href="/portfolio" variant="secondary">See Our Work</Button>
+      </div>
+      <div class="mt-16 grid max-w-2xl grid-cols-3 gap-5 border-t border-white/10 pt-8 animate-slide-up [animation-delay:420ms]">
+        <div>
+          <p class="counter text-3xl font-heading font-bold gradient-text" data-target="50">0</p>
+          <p class="mt-2 text-sm text-muted-300">Sites Launched</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading font-bold gradient-text">99.9%</p>
+          <p class="mt-2 text-sm text-muted-300">Uptime</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading font-bold gradient-text">100%</p>
+          <p class="mt-2 text-sm text-muted-300">NZ Based</p>
+        </div>
+      </div>
+    </div>
+    <div class="relative hidden lg:block animate-slide-up [animation-delay:250ms]">
+      <div class="glow-frame panel-highlight glass rounded-[2rem] p-6 shadow-[0_0_60px_rgba(0,229,255,0.08)]">
+        <div class="mb-5 flex items-center justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-[0.24em] text-muted-300">Live Snapshot</p>
+            <h3 class="mt-2 text-xl font-heading text-muted-100">SiteGenius Studio</h3>
+          </div>
+          <span class="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">Online</span>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-2xl border border-white/10 bg-space-900/70 p-4">
+            <div class="mb-4 flex gap-2">
+              <span class="h-2.5 w-2.5 rounded-full bg-rose-400/80"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-amber-300/80"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+            </div>
+            <div class="space-y-3">
+              <div class="h-2.5 w-2/3 rounded-full bg-gradient-to-r from-neon-cyan/70 to-neon-purple/50"></div>
+              <div class="h-2 w-full rounded-full bg-white/8"></div>
+              <div class="h-2 w-5/6 rounded-full bg-white/8"></div>
+              <div class="grid grid-cols-3 gap-3 pt-2">
+                <div class="rounded-xl border border-white/5 bg-white/5 p-3">
+                  <p class="text-xs text-muted-300">Speed</p>
+                  <p class="mt-2 text-lg font-heading text-neon-cyan">99</p>
+                </div>
+                <div class="rounded-xl border border-white/5 bg-white/5 p-3">
+                  <p class="text-xs text-muted-300">SEO</p>
+                  <p class="mt-2 text-lg font-heading text-neon-cyan">A+</p>
+                </div>
+                <div class="rounded-xl border border-white/5 bg-white/5 p-3">
+                  <p class="text-xs text-muted-300">Launch</p>
+                  <p class="mt-2 text-lg font-heading text-neon-cyan">Fast</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-xs uppercase tracking-[0.2em] text-muted-300">Best Fit</p>
+              <p class="mt-3 text-sm leading-6 text-muted-200">Tradies, service businesses, workshops, salons, cafes.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+              <p class="text-xs uppercase tracking-[0.2em] text-muted-300">Build Style</p>
+              <p class="mt-3 text-sm leading-6 text-muted-200">Fast Astro builds with polished motion and zero fluff.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute -right-8 top-10 h-24 w-24 rounded-full border border-neon-cyan/20 bg-neon-cyan/10 blur-2xl"></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const words = ['plumbers', 'cafes', 'mechanics', 'florists', 'builders', 'salons'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+  const typed = document.getElementById('typed-text');
+
+  function tick() {
+    if (!typed) return;
+    const current = words[wordIndex];
+    typed.textContent = deleting ? current.slice(0, charIndex--) : current.slice(0, charIndex++);
+
+    let delay = deleting ? 50 : 95;
+    if (!deleting && charIndex > current.length) {
+      deleting = true;
+      delay = 1200;
+    } else if (deleting && charIndex < 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      delay = 240;
+    }
+
+    window.setTimeout(tick, delay);
+  }
+
+  tick();
+
+  document.querySelectorAll('.counter').forEach((counter) => {
+    const target = Number(counter.getAttribute('data-target') || '0');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        let current = 0;
+        const step = target / 40;
+        const timer = window.setInterval(() => {
+          current += step;
+          if (current >= target) {
+            counter.textContent = `${target}+`;
+            window.clearInterval(timer);
+          } else {
+            counter.textContent = `${Math.floor(current)}+`;
+          }
+        }, 40);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(counter);
+  });
+</script>

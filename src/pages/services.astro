@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PricingCard from '../components/ui/PricingCard.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+import { services } from '../data/services';
+import { hostingPlans, emailPlans, carePlans } from '../data/pricing';
+---
+<BaseLayout title="Services — SiteGenius" description="Web design, hosting, email, and website care plans for NZ businesses.">
+  <section class="pt-32 pb-16 grid-bg">
+    <div class="container-custom">
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">What We <span class="gradient-text">Do</span></h1>
+      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">Everything you need to get your business online and keep it running smoothly.</p>
+    </div>
+  </section>
+
+  <!-- Web Design -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="animate-on-scroll">
+          <div class="w-14 h-14 rounded-xl bg-neon-cyan/10 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h2 class="text-3xl font-heading font-bold mb-4">Web Design & <span class="gradient-text">Development</span></h2>
+          <p class="text-muted-200 leading-relaxed mb-6">{services[0].description} We handle everything from design to deployment.</p>
+          <div class="glass rounded-xl p-4 inline-flex items-center gap-3 mb-6">
+            <span class="text-2xl">🚗</span>
+            <p class="text-sm text-muted-200"><strong class="text-muted-100">Automotive specialists</strong> — panel beaters, mechanics, dealerships. We understand your industry.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 animate-on-scroll">
+          {services[0].features.map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hosting -->
+  <section class="section-padding bg-space-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-heading font-bold mb-4">Reliable <span class="gradient-text">NZ Hosting</span></h2>
+        <p class="text-muted-200">All plans include SSL, daily backups, and 99.9% uptime guarantee.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {hostingPlans.map((plan) => (
+          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Email -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-heading font-bold mb-4">Professional <span class="gradient-text">Email</span></h2>
+        <p class="text-muted-200">Look legit with you@yourbusiness.co.nz</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {emailPlans.map((plan) => (
+          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Care Plans -->
+  <section class="section-padding bg-space-800/50">
+    <div class="container-custom">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-heading font-bold mb-4">Keep Your Site in <span class="gradient-text">Top Shape</span></h2>
+        <p class="text-muted-200">Keep your site secure, updated, and running at peak performance.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        {carePlans.map((plan) => (
+          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    title="Not sure what you need?"
+    description="We'll figure it out together."
+    href="/contact"
+    label="Book a Free Chat"
+  />
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+import TestimonialCard from '../ui/TestimonialCard.astro';
+import { testimonials } from '../../data/testimonials';
+---
+<section class="section-padding bg-space-800/40">
+  <div class="container-custom">
+    <div class="mx-auto mb-14 max-w-2xl text-center animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl">What Our <span class="gradient-text">Clients Say</span></h2>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {testimonials.map((testimonial) => (
+        <div class="animate-on-scroll">
+          <TestimonialCard {...testimonial} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

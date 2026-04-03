@@ -1,0 +1,23 @@
+---
+interface Props { name: string; price: string; period?: string; description: string; features: string[]; popular?: boolean; badge?: string; cta: string; ctaLink: string; }
+const { name, price, period = '', description, features, popular = false, badge, cta, ctaLink } = Astro.props;
+---
+<div class={`glow-frame panel-highlight glass rounded-2xl p-8 flex flex-col relative transition-all duration-300 hover:-translate-y-1 hover:border-neon-cyan/20 hover:shadow-glow-strong ${popular ? 'border-neon-cyan/30 shadow-glow ring-1 ring-neon-cyan/20' : ''}`}>
+  {popular && <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-neon-cyan to-neon-purple text-space-900 text-xs font-heading font-bold px-4 py-1 rounded-full">Most Popular</div>}
+  <h3 class="text-xl font-heading font-bold text-muted-100">{name}</h3>
+  {badge && <p class="mt-2 text-xs uppercase tracking-[0.2em] text-muted-300">{badge}</p>}
+  <div class="mt-4 mb-2">
+    <span class="text-4xl font-heading font-bold gradient-text">{price}</span>
+    {period && <span class="text-muted-300 text-sm">{period}</span>}
+  </div>
+  <p class="text-muted-200 text-sm mb-6">{description}</p>
+  <ul class="flex-1 space-y-3 mb-8">
+    {features.map(f => (
+      <li class="flex items-start gap-2 text-sm text-muted-200">
+        <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        {f}
+      </li>
+    ))}
+  </ul>
+  <a href={ctaLink} class={popular ? 'btn-primary text-center' : 'btn-secondary text-center'}>{cta}</a>
+</div>
