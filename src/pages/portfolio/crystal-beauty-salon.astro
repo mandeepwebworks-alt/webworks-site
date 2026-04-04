@@ -1,0 +1,94 @@
+---
+// Crystal Beauty Salon — LIGHT ELEGANT THEME
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystal Beauty Salon — Demo | SiteGenius</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; color: #3a2d2d; background: #FFF9F5; }
+    h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+    /* Demo Banner */
+    .demo-bar { background: linear-gradient(90deg, #e8b4b8, #d4a0a6); color: #fff; text-align: center; padding: 10px; font-size: 13px; position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
+    .demo-bar a { color: #fff; font-weight: 700; }
+
+    /* Hero */
+    .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(160deg, #FFF9F5 0%, #FCE4EC 50%, #F8BBD0 100%); padding-top: 60px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(233,30,99,0.08), transparent 70%); border-radius: 50%; }
+    .hero::after { content: ''; position: absolute; bottom: -100px; left: -60px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(156,39,176,0.06), transparent 70%); border-radius: 50%; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .hero h1 { font-size: 3.8rem; line-height: 1.15; color: #2d1f1f; }
+    .hero h1 span { color: #c2185b; font-style: italic; }
+    .hero p { margin-top: 20px; font-size: 1.1rem; color: #6d5555; line-height: 1.7; }
+    .hero-btn { display: inline-block; margin-top: 28px; padding: 16px 36px; background: #c2185b; color: #fff; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 0.95rem; transition: 0.3s; box-shadow: 0 8px 30px rgba(194,24,91,0.3); }
+    .hero-btn:hover { background: #ad1457; transform: translateY(-2px); }
+    .hero-visual { display: flex; justify-content: center; }
+    .hero-card { width: 340px; height: 420px; background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-radius: 200px 200px 24px 24px; display: flex; align-items: center; justify-content: center; font-size: 6rem; box-shadow: 0 20px 60px rgba(194,24,91,0.15); }
+
+    /* Services */
+    .services { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .services h2 { text-align: center; font-size: 2.4rem; margin-bottom: 12px; color: #2d1f1f; }
+    .services > p { text-align: center; color: #8d7070; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card { background: #fff; border-radius: 20px; padding: 36px 28px; text-align: center; border: 1px solid #f3e0e0; transition: 0.3s; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(194,24,91,0.08); border-color: #f8bbd0; }
+    .service-card .icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: #2d1f1f; }
+    .service-card .price { color: #c2185b; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; }
+    .service-card p { font-size: 0.85rem; color: #8d7070; line-height: 1.6; }
+
+    /* CTA */
+    .cta { background: linear-gradient(135deg, #c2185b, #880e4f); padding: 80px 24px; text-align: center; color: #fff; }
+    .cta h2 { font-size: 2.4rem; margin-bottom: 12px; }
+    .cta p { opacity: 0.85; margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .cta a { display: inline-block; padding: 16px 36px; background: #fff; color: #c2185b; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+    .cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-visual { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">✨ This is a demo site built by <a href="/">SiteGenius</a> — <a href="/get-a-quote">Get yours today</a></div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>Your Beauty,<br><span>Our Passion</span></h1>
+        <p>Experience luxury beauty treatments in the heart of Ponsonby. Haircuts, facials, nails, and more — all under one roof.</p>
+        <a href="/get-a-quote" class="hero-btn">Book Appointment</a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">💎</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <p>Premium treatments tailored to make you look and feel your best.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon">💇‍♀️</div><h3>Haircuts & Styling</h3><div class="price">From $65</div><p>Precision cuts, blowouts, and styling for every occasion.</p></div>
+      <div class="service-card"><div class="icon">🧖‍♀️</div><h3>Facials & Skincare</h3><div class="price">From $95</div><p>Deep cleansing, hydration, and anti-ageing treatments.</p></div>
+      <div class="service-card"><div class="icon">💅</div><h3>Nail Art & Manicures</h3><div class="price">From $45</div><p>Gel, acrylic, and creative nail art by our specialists.</p></div>
+      <div class="service-card"><div class="icon">🎨</div><h3>Hair Colouring</h3><div class="price">From $120</div><p>Balayage, highlights, and full colour transformations.</p></div>
+      <div class="service-card"><div class="icon">👁️</div><h3>Eyelash Extensions</h3><div class="price">From $80</div><p>Classic, hybrid, and volume lash sets for every look.</p></div>
+      <div class="service-card"><div class="icon">👰</div><h3>Bridal Packages</h3><div class="price">From $350</div><p>Complete hair, makeup, and beauty for your special day.</p></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Glow?</h2>
+    <p>Book your appointment online and let us take care of the rest.</p>
+    <a href="/get-a-quote">Book Now →</a>
+  </section>
+</body>
+</html>

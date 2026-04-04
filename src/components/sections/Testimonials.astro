@@ -1,16 +1,36 @@
 ---
-import TestimonialCard from '../ui/TestimonialCard.astro';
 import { testimonials } from '../../data/testimonials';
 ---
-<section class="section-padding bg-space-800/40">
-  <div class="container-custom">
-    <div class="mx-auto mb-14 max-w-2xl text-center animate-on-scroll">
-      <h2 class="text-3xl md:text-4xl">What Our <span class="gradient-text">Clients Say</span></h2>
+<section class="section-padding relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-space-800/40 via-transparent to-space-800/40"></div>
+  <div class="container-custom relative">
+    <div class="mb-16 animate-on-scroll">
+      <p class="section-label">Testimonials</p>
+      <h2 class="mt-4 text-4xl md:text-5xl lg:text-6xl">
+        Loved by <span class="gradient-text">NZ businesses</span>
+      </h2>
     </div>
-    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {testimonials.map((testimonial) => (
+
+    <div class="grid gap-4 md:grid-cols-2 stagger-children">
+      {testimonials.map((t, i) => (
         <div class="animate-on-scroll">
-          <TestimonialCard {...testimonial} />
+          <div class={`group rounded-2xl border border-white/[0.04] bg-white/[0.02] p-8 md:p-10 transition-all duration-500 hover:border-white/[0.08] hover:bg-white/[0.04] ${i === 0 ? 'md:row-span-1' : ''}`}>
+            <div class="flex gap-1 mb-6">
+              {Array.from({length: t.rating}).map(() => <span class="text-amber-400 text-sm">★</span>)}
+            </div>
+            <blockquote class="text-lg md:text-xl leading-relaxed text-muted-100 font-light">
+              "{t.quote}"
+            </blockquote>
+            <div class="mt-8 flex items-center gap-4">
+              <div class="h-10 w-10 rounded-full bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 flex items-center justify-center text-sm font-heading font-bold text-muted-200">
+                {t.name.split(' ').map(n => n[0]).join('')}
+              </div>
+              <div>
+                <p class="font-medium text-muted-100 text-sm">{t.name}</p>
+                <p class="text-xs text-muted-300">{t.business}, {t.location}</p>
+              </div>
+            </div>
+          </div>
         </div>
       ))}
     </div>

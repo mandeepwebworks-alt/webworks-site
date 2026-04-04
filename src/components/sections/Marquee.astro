@@ -1,0 +1,19 @@
+---
+const items = [
+  'Web Design', 'Shopify', 'WordPress', 'SEO', 'NZ Hosting',
+  'Business Email', 'Logo Design', 'Google Ads', 'Fast Loading',
+  'Mobile-First', 'Custom Code', 'SSL Included',
+];
+---
+<section class="border-y border-white/[0.04] bg-white/[0.01] py-5 overflow-hidden">
+  <div class="marquee">
+    <div class="marquee-track">
+      {[...items, ...items].map((item, i) => (
+        <span class="flex items-center gap-6 px-6 whitespace-nowrap">
+          <span class="text-sm font-heading font-medium text-muted-300 uppercase tracking-widest">{item}</span>
+          <span class="h-1 w-1 rounded-full bg-neon-cyan/40"></span>
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

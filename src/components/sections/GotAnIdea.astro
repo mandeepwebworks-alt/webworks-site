@@ -1,0 +1,108 @@
+---
+import Button from '../ui/Button.astro';
+---
+<section class="section-padding relative overflow-hidden">
+  <div class="container-custom relative">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left: Copy -->
+      <div class="animate-on-scroll">
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/[0.06] px-4 py-1.5 mb-6">
+          <svg class="h-4 w-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+          <span class="text-xs font-heading font-semibold text-amber-300 uppercase tracking-wider">Got an Idea?</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1]">
+          Got a website or app idea?<br/>
+          <span class="gradient-text">Let's make it real.</span>
+        </h2>
+        <p class="mt-6 text-lg text-muted-200 leading-relaxed max-w-lg">
+          Whether it's a business website, an online store, a booking system, or even a full app — if you can dream it, we can build it. No idea is too small or too ambitious.
+        </p>
+        <div class="mt-8 space-y-4">
+          <div class="flex items-start gap-3">
+            <svg class="h-5 w-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-muted-200 text-sm"><strong class="text-muted-100">Free brainstorm session</strong> — tell us your idea, we'll tell you what's possible</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="h-5 w-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-muted-200 text-sm"><strong class="text-muted-100">No commitment</strong> — just a friendly chat about your vision</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="h-5 w-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <p class="text-muted-200 text-sm"><strong class="text-muted-100">We handle everything</strong> — design, development, hosting, the lot</p>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <Button href="/get-a-quote">Share Your Idea</Button>
+          <Button href="/contact" variant="secondary">Book a Free Chat</Button>
+        </div>
+      </div>
+
+      <!-- Right: Visual -->
+      <div class="animate-on-scroll hidden lg:block">
+        <div class="relative">
+          <div class="glow-frame glass rounded-3xl p-8 relative overflow-hidden">
+            <div class="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-amber-400/[0.06] blur-[80px]"></div>
+            <div class="relative space-y-6">
+              <!-- Business Website -->
+              <div class="flex items-center gap-4">
+                <div class="h-14 w-14 rounded-2xl bg-neon-cyan/[0.08] flex items-center justify-center shrink-0">
+                  <svg class="h-6 w-6 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-100">Business Website</p>
+                  <p class="text-xs text-muted-300">Get your business online professionally</p>
+                </div>
+                <span class="ml-auto text-xs text-emerald-400 bg-emerald-400/[0.08] px-2 py-1 rounded-full border border-emerald-400/20">Popular</span>
+              </div>
+              <div class="h-px bg-white/[0.04]"></div>
+              <!-- Online Store -->
+              <div class="flex items-center gap-4">
+                <div class="h-14 w-14 rounded-2xl bg-neon-purple/[0.08] flex items-center justify-center shrink-0">
+                  <svg class="h-6 w-6 text-neon-purple" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-100">Online Store</p>
+                  <p class="text-xs text-muted-300">Sell products to customers across NZ</p>
+                </div>
+              </div>
+              <div class="h-px bg-white/[0.04]"></div>
+              <!-- Booking System -->
+              <div class="flex items-center gap-4">
+                <div class="h-14 w-14 rounded-2xl bg-amber-400/[0.08] flex items-center justify-center shrink-0">
+                  <svg class="h-6 w-6 text-amber-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"/></svg>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-100">Booking System</p>
+                  <p class="text-xs text-muted-300">Let customers book appointments online</p>
+                </div>
+              </div>
+              <div class="h-px bg-white/[0.04]"></div>
+              <!-- Web App -->
+              <div class="flex items-center gap-4">
+                <div class="h-14 w-14 rounded-2xl bg-emerald-400/[0.08] flex items-center justify-center shrink-0">
+                  <svg class="h-6 w-6 text-emerald-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-100">Web App / Custom Tool</p>
+                  <p class="text-xs text-muted-300">Turn your unique idea into reality</p>
+                </div>
+              </div>
+              <div class="h-px bg-white/[0.04]"></div>
+              <!-- Your idea -->
+              <div class="flex items-center gap-4 opacity-60">
+                <div class="h-14 w-14 rounded-2xl border border-dashed border-white/10 flex items-center justify-center shrink-0">
+                  <svg class="h-6 w-6 text-muted-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+                </div>
+                <div>
+                  <p class="font-heading font-semibold text-muted-200 italic">Your idea here...</p>
+                  <p class="text-xs text-muted-300">Tell us what you're thinking</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -right-6 -bottom-6 h-20 w-20 rounded-full bg-neon-purple/[0.08] blur-2xl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

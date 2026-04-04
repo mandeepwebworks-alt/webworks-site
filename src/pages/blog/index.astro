@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    slug: 'how-much-does-a-website-cost-in-nz',
+    title: 'How Much Does a Website Cost in New Zealand? (2026 Guide)',
+    description: 'A comprehensive breakdown of website costs in NZ — from DIY builders to professional developers. Find the right option for your budget.',
+    category: 'Guide',
+    color: 'neon-cyan',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop',
+  },
+  {
+    slug: 'tradie-website-nz',
+    title: '5 Must-Have Features for Every Tradie Website in NZ',
+    description: 'Essential features that turn your tradie website into a lead-generating machine. Built for plumbers, builders, electricians & more.',
+    category: 'Tradies',
+    color: 'amber-400',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+  },
+  {
+    slug: 'do-i-need-a-website-for-my-business-nz',
+    title: 'Do I Actually Need a Website for My Small Business in NZ?',
+    description: 'Why social media alone isn\'t enough. Discover why NZ small businesses with websites outperform those without.',
+    category: 'Business',
+    color: 'neon-purple',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+  },
+  {
+    slug: 'subscription-website-vs-one-time-nz',
+    title: 'Subscription Website vs One-Time Payment: Which Is Better?',
+    description: 'Compare subscription website plans vs one-off builds. We break down the real costs, pros, and cons for NZ businesses.',
+    category: 'Pricing',
+    color: 'emerald-400',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+  },
+  {
+    slug: 'google-business-profile-nz',
+    title: 'How to Set Up Google Business Profile for Your NZ Business',
+    description: 'Step-by-step guide to claiming and optimising your Google Business Profile to get found by local customers.',
+    category: 'SEO',
+    color: 'neon-cyan',
+    image: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&h=400&fit=crop',
+  },
+  {
+    slug: 'professional-vs-diy',
+    title: 'Professional Developer vs DIY (Wix, AI, WordPress)',
+    description: 'Why serious businesses need custom, high-converting web solutions over basic templates.',
+    category: 'Guide',
+    color: 'neon-purple',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop',
+  },
+];
+---
+<BaseLayout title="Blog & Insights — SiteGenius" description="Guides, deep dives, and expert advice to help NZ businesses navigate the digital landscape and grow online.">
+  <section class="pt-32 pb-16 border-b border-white/[0.04]">
+    <div class="container-custom relative z-10 text-center">
+      <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Blog</span>
+      <h1 class="text-5xl md:text-6xl font-black mb-6">Expert <span class="gradient-text">Insights</span></h1>
+      <p class="text-xl text-muted-200 max-w-2xl mx-auto">Guides, deep dives, and expert advice to help you navigate the digital landscape and scale your business.</p>
+    </div>
+  </section>
+
+  <section class="section-padding flex-1">
+    <div class="container-custom">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <a href={`/blog/${post.slug}`} class="glass-hover group overflow-hidden flex flex-col rounded-2xl">
+            <div class="h-48 w-full overflow-hidden relative">
+              <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-space-900/60 to-transparent"></div>
+            </div>
+            <div class="p-8 flex-1 flex flex-col">
+              <div class="mb-4">
+                <span class={`text-xs font-bold uppercase tracking-wider text-${post.color} bg-${post.color}/10 px-3 py-1 rounded-full`}>{post.category}</span>
+              </div>
+              <h3 class="text-xl font-bold mb-3 group-hover:text-neon-cyan transition-colors">{post.title}</h3>
+              <p class="text-muted-200 text-sm mb-6 flex-1">{post.description}</p>
+              <span class="text-sm font-semibold text-neon-purple flex items-center gap-2">
+                Read Article
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

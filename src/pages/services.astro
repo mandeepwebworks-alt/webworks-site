@@ -13,77 +13,45 @@ import { hostingPlans, emailPlans, carePlans } from '../data/pricing';
     </div>
   </section>
 
-  <!-- Web Design -->
+  <!-- Services Loop -->
   <section class="section-padding">
     <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="animate-on-scroll">
-          <div class="w-14 h-14 rounded-xl bg-neon-cyan/10 flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          </div>
-          <h2 class="text-3xl font-heading font-bold mb-4">Web Design & <span class="gradient-text">Development</span></h2>
-          <p class="text-muted-200 leading-relaxed mb-6">{services[0].description} We handle everything from design to deployment.</p>
-          <div class="glass rounded-xl p-4 inline-flex items-center gap-3 mb-6">
-            <span class="text-2xl">🚗</span>
-            <p class="text-sm text-muted-200"><strong class="text-muted-100">Automotive specialists</strong> — panel beaters, mechanics, dealerships. We understand your industry.</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-4 animate-on-scroll">
-          {services[0].features.map(f => (
-            <div class="glass rounded-lg p-4 flex items-start gap-3">
-              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="text-sm text-muted-200">{f}</span>
+      <div class="space-y-32">
+        {services.map((service, index) => (
+          <div class={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+            <div class={`animate-on-scroll ${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
+              <div class={`w-14 h-14 rounded-xl bg-${service.color}/10 flex items-center justify-center mb-6`}>
+                <svg class={`w-7 h-7 text-${service.color}`} fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={service.icon} />
+                </svg>
+              </div>
+              <h2 class="text-3xl font-heading font-bold mb-4">{service.title}</h2>
+              <p class="text-muted-200 leading-relaxed mb-6">{service.description}</p>
+              
+              {index === 0 && (
+                <div class="glass rounded-xl p-4 inline-flex items-center gap-3 mb-6">
+                  <svg class="w-6 h-6 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                  </svg>
+                  <p class="text-sm text-muted-200"><strong class="text-muted-100">Got an idea?</strong> If you have any idea about website or app let's talk, we can definitely work around for you.</p>
+                </div>
+              )}
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hosting -->
-  <section class="section-padding bg-space-800/50">
-    <div class="container-custom">
-      <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl font-heading font-bold mb-4">Reliable <span class="gradient-text">NZ Hosting</span></h2>
-        <p class="text-muted-200">All plans include SSL, daily backups, and 99.9% uptime guarantee.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {hostingPlans.map((plan) => (
-          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
+            
+            <div class={`grid grid-cols-2 gap-4 animate-on-scroll ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
+              {service.features.map(f => (
+                <div class="glass rounded-lg p-4 flex items-start gap-3 glass-hover">
+                  <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  <span class="text-sm text-muted-200 leading-tight">{f}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Email -->
-  <section class="section-padding">
-    <div class="container-custom">
-      <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl font-heading font-bold mb-4">Professional <span class="gradient-text">Email</span></h2>
-        <p class="text-muted-200">Look legit with you@yourbusiness.co.nz</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {emailPlans.map((plan) => (
-          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Care Plans -->
-  <section class="section-padding bg-space-800/50">
-    <div class="container-custom">
-      <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl font-heading font-bold mb-4">Keep Your Site in <span class="gradient-text">Top Shape</span></h2>
-        <p class="text-muted-200">Keep your site secure, updated, and running at peak performance.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-        {carePlans.map((plan) => (
-          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <CTABanner
     title="Not sure what you need?"

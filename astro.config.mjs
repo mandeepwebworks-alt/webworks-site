@@ -8,4 +8,9 @@ export default defineConfig({
     tailwind(),
     react(),
   ],
+  vite: {
+    server: {
+      allowedHosts: true,
+    },
+  },
 });

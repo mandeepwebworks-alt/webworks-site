@@ -1,0 +1,97 @@
+---
+// Peak Fitness Gym — BOLD DARK INDUSTRIAL THEME
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peak Fitness Gym — Demo | SiteGenius</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Barlow', sans-serif; color: #e0e0e0; background: #0d0d0d; }
+    h1,h2,h3 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
+
+    .demo-bar { background: #CDFF00; color: #0d0d0d; text-align: center; padding: 10px; font-size: 13px; font-weight: 600; position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
+    .demo-bar a { color: #0d0d0d; }
+
+    .hero { min-height: 100vh; display: flex; align-items: center; background: #0d0d0d; padding-top: 50px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(180deg, #CDFF00 0%, #1a1a1a 60%); clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%); opacity: 0.15; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    .hero h1 { font-size: 6rem; line-height: 0.95; color: #fff; text-transform: uppercase; }
+    .hero h1 span { color: #CDFF00; display: block; }
+    .hero p { margin-top: 24px; font-size: 1.15rem; color: #999; max-width: 500px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 16px; margin-top: 32px; }
+    .btn-primary { padding: 18px 40px; background: #CDFF00; color: #0d0d0d; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; border: none; }
+    .btn-primary:hover { background: #b8e600; }
+    .btn-outline { padding: 18px 40px; border: 2px solid #333; color: #fff; text-decoration: none; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .btn-outline:hover { border-color: #CDFF00; color: #CDFF00; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #CDFF00; margin: 0; }
+    .stat { background: #0d0d0d; padding: 40px; text-align: center; }
+    .stat h3 { font-size: 2.8rem; color: #CDFF00; }
+    .stat p { font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 2px; margin-top: 4px; }
+
+    .classes { padding: 100px 24px; max-width: 1200px; margin: 0 auto; }
+    .classes h2 { font-size: 3rem; text-transform: uppercase; color: #fff; margin-bottom: 48px; }
+    .classes h2 span { color: #CDFF00; }
+    .class-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .class-card { background: #161616; padding: 32px; border-left: 3px solid #CDFF00; transition: 0.3s; }
+    .class-card:hover { background: #1c1c1c; }
+    .class-card .emoji { font-size: 2rem; margin-bottom: 12px; }
+    .class-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 6px; letter-spacing: 1px; }
+    .class-card .time { color: #CDFF00; font-size: 0.85rem; font-weight: 600; }
+
+    .cta { background: #CDFF00; padding: 80px 24px; text-align: center; }
+    .cta h2 { font-size: 3.5rem; color: #0d0d0d; text-transform: uppercase; margin-bottom: 16px; }
+    .cta p { color: #333; margin-bottom: 28px; }
+    .cta a { display: inline-block; padding: 18px 48px; background: #0d0d0d; color: #CDFF00; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+    .cta a:hover { background: #1a1a1a; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .class-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">⚡ This is a demo site built by <a href="/">SiteGenius</a> — <a href="/get-a-quote">Get yours today</a></div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Push Your<span>Limits</span></h1>
+      <p>Auckland's most results-driven gym. World-class equipment, expert trainers, and group classes to smash your goals.</p>
+      <div class="hero-btns">
+        <a href="/get-a-quote" class="btn-primary">Start Free Trial</a>
+        <a href="#classes" class="btn-outline">View Classes</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><h3>1500+</h3><p>Members</p></div>
+    <div class="stat"><h3>45+</h3><p>Weekly Classes</p></div>
+    <div class="stat"><h3>12</h3><p>Pro Trainers</p></div>
+    <div class="stat"><h3>24/7</h3><p>Open Access</p></div>
+  </div>
+
+  <section class="classes" id="classes">
+    <h2>Class <span>Schedule</span></h2>
+    <div class="class-grid">
+      <div class="class-card"><div class="emoji">⚡</div><h3>HIIT Blast</h3><div class="time">Mon/Wed/Fri · 6:00am</div></div>
+      <div class="class-card"><div class="emoji">🚴</div><h3>Spin Cycle</h3><div class="time">Tue/Thu · 7:00am</div></div>
+      <div class="class-card"><div class="emoji">🧘</div><h3>Yoga Flow</h3><div class="time">Mon/Wed · 5:30pm</div></div>
+      <div class="class-card"><div class="emoji">🥊</div><h3>Boxing Cardio</h3><div class="time">Tue/Thu · 6:00pm</div></div>
+      <div class="class-card"><div class="emoji">🏋️</div><h3>Strength Lab</h3><div class="time">Mon–Fri · 12:00pm</div></div>
+      <div class="class-card"><div class="emoji">🤸</div><h3>Pilates</h3><div class="time">Sat · 9:00am</div></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Get Started Today</h2>
+    <p>First week free. No contracts. Cancel anytime.</p>
+    <a href="/get-a-quote">Claim Free Trial →</a>
+  </section>
+</body>
+</html>

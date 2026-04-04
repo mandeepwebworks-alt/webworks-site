@@ -1,20 +1,97 @@
 ---
-import ServiceCard from '../ui/ServiceCard.astro';
-import { services } from '../../data/services';
 ---
 <section class="section-padding">
   <div class="container-custom">
-    <div class="mx-auto mb-16 max-w-2xl text-center animate-on-scroll">
-      <h2 class="text-3xl md:text-4xl">What We <span class="gradient-text">Do</span></h2>
-      <div class="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-neon-cyan to-transparent"></div>
-      <p class="mt-6 text-muted-200">Everything you need to get your business online and keep it running smoothly.</p>
+    <div class="mb-16 animate-on-scroll">
+      <p class="section-label">What we do</p>
+      <h2 class="mt-4 text-4xl md:text-5xl lg:text-6xl max-w-xl">
+        Everything your business needs <span class="gradient-text">online</span>
+      </h2>
     </div>
-    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-      {services.map((service) => (
-        <div class="animate-on-scroll">
-          <ServiceCard title={service.title} description={service.description} icon={service.icon} />
+
+    <!-- Bento Grid -->
+    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 stagger-children">
+      <!-- Large: Web Design (spans 2 cols) -->
+      <div class="animate-on-scroll lg:col-span-2">
+        <div class="glass-hover group relative h-full overflow-hidden rounded-2xl p-8 md:p-10">
+          <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-neon-cyan/[0.04] blur-[80px] transition-all duration-700 group-hover:bg-neon-cyan/[0.08]"></div>
+          <div class="relative">
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-neon-cyan/[0.08] text-neon-cyan">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+            </div>
+            <h3 class="text-2xl md:text-3xl text-muted-100">Web Design & Development</h3>
+            <p class="mt-4 max-w-lg text-muted-200 leading-relaxed">Beautiful, fast websites built to turn visitors into customers. From single-page sites to full business platforms — we handle design, code, and everything in between.</p>
+            <div class="mt-8 flex flex-wrap gap-2">
+              {['Responsive', 'SEO Ready', 'Fast Loading', 'Custom Design', 'CMS'].map(tag => (
+                <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-xs text-muted-300">{tag}</span>
+              ))}
+            </div>
+            <a href="/services" class="mt-8 inline-flex items-center gap-2 text-sm font-medium text-neon-cyan transition-colors hover:text-neon-teal group/link">
+              Learn more
+              <svg class="h-4 w-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
         </div>
-      ))}
+      </div>
+
+      <!-- Web Hosting -->
+      <div class="animate-on-scroll">
+        <div class="glass-hover group relative h-full overflow-hidden rounded-2xl p-8">
+          <div class="absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-neon-purple/[0.04] blur-[60px] transition-all duration-700 group-hover:bg-neon-purple/[0.08]"></div>
+          <div class="relative">
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-neon-purple/[0.08] text-neon-purple">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
+            </div>
+            <h3 class="text-xl text-muted-100">Web Hosting</h3>
+            <p class="mt-3 text-sm text-muted-200 leading-relaxed">NZ-based servers. We keep your site fast, secure, and always online.</p>
+            <p class="mt-4 text-2xl font-heading gradient-text">$25<span class="text-sm text-muted-300 font-normal">/mo</span></p>
+            <a href="/services" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-neon-cyan hover:text-neon-teal transition-colors">
+              View plans <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Email -->
+      <div class="animate-on-scroll">
+        <div class="glass-hover group relative h-full overflow-hidden rounded-2xl p-8">
+          <div class="absolute -left-12 -top-12 h-40 w-40 rounded-full bg-emerald-500/[0.03] blur-[60px] transition-all duration-700 group-hover:bg-emerald-500/[0.06]"></div>
+          <div class="relative">
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/[0.08] text-emerald-400">
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <h3 class="text-xl text-muted-100">Business Email</h3>
+            <p class="mt-3 text-sm text-muted-200 leading-relaxed">Professional email @yourbusiness.co.nz. Look legit from day one.</p>
+            <p class="mt-4 text-2xl font-heading gradient-text">$5<span class="text-sm text-muted-300 font-normal">/mo</span></p>
+            <a href="/services" class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-neon-cyan hover:text-neon-teal transition-colors">
+              View plans <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Website Care (spans 2 cols) -->
+      <div class="animate-on-scroll lg:col-span-2">
+        <div class="glass-hover group relative overflow-hidden rounded-2xl p-8 md:p-10">
+          <div class="absolute -right-20 -bottom-20 h-48 w-48 rounded-full bg-amber-500/[0.03] blur-[80px] transition-all duration-700 group-hover:bg-amber-500/[0.06]"></div>
+          <div class="relative flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500/[0.08] text-amber-400">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              </div>
+              <h3 class="text-xl text-muted-100">Website Care Plans</h3>
+              <p class="mt-3 max-w-md text-sm text-muted-200 leading-relaxed">Security updates, performance monitoring, content changes. We keep your site in top shape so you can focus on your business.</p>
+            </div>
+            <div class="flex flex-col items-start md:items-end gap-3">
+              <p class="text-sm text-muted-300">From</p>
+              <p class="text-3xl font-heading gradient-text">$49<span class="text-sm text-muted-300 font-normal">/mo</span></p>
+              <a href="/services" class="inline-flex items-center gap-2 text-sm font-medium text-neon-cyan hover:text-neon-teal transition-colors">
+                Learn more <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

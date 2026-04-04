@@ -1,0 +1,112 @@
+---
+// The Daily Grind Cafe — WARM EARTHY CREAM THEME
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Grind Cafe — Demo | SiteGenius</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; color: #3e2c1c; background: #FAF6F1; }
+    h1,h2,h3 { font-family: 'DM Serif Display', serif; }
+
+    .demo-bar { background: #8B5E3C; color: #FAF6F1; text-align: center; padding: 10px; font-size: 13px; position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
+    .demo-bar a { color: #F5D6A8; font-weight: 700; }
+
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; background: #FAF6F1; padding-top: 50px; }
+    .hero-text { display: flex; flex-direction: column; justify-content: center; padding: 60px; }
+    .hero-text .tag { display: inline-block; background: #8B5E3C; color: #FAF6F1; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin-bottom: 20px; width: fit-content; }
+    .hero h1 { font-size: 3.5rem; line-height: 1.2; color: #2c1a0e; }
+    .hero h1 span { color: #8B5E3C; }
+    .hero p { margin-top: 16px; font-size: 1.05rem; color: #7a5e46; line-height: 1.7; max-width: 440px; }
+    .hero-btns { display: flex; gap: 12px; margin-top: 28px; }
+    .btn-warm { padding: 14px 32px; background: #8B5E3C; color: #fff; text-decoration: none; border-radius: 12px; font-weight: 700; transition: 0.3s; }
+    .btn-warm:hover { background: #73492c; }
+    .btn-warm-outline { padding: 14px 32px; border: 2px solid #8B5E3C; color: #8B5E3C; text-decoration: none; border-radius: 12px; font-weight: 700; transition: 0.3s; }
+    .btn-warm-outline:hover { background: #8B5E3C; color: #fff; }
+    .hero-img { background: linear-gradient(135deg, #D4A574 0%, #8B5E3C 100%); display: flex; align-items: center; justify-content: center; font-size: 8rem; }
+
+    .menu { padding: 100px 24px; max-width: 1000px; margin: 0 auto; }
+    .menu h2 { text-align: center; font-size: 2.4rem; color: #2c1a0e; margin-bottom: 8px; }
+    .menu > p { text-align: center; color: #7a5e46; margin-bottom: 48px; }
+    .menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .menu-section h3 { font-size: 1.3rem; color: #8B5E3C; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #E8D5C0; }
+    .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 0; border-bottom: 1px dashed #E8D5C0; }
+    .menu-item span:first-child { font-weight: 500; }
+    .menu-item span:last-child { color: #8B5E3C; font-weight: 700; }
+
+    .features { display: grid; grid-template-columns: repeat(3,1fr); background: #8B5E3C; }
+    .feature { padding: 48px 32px; text-align: center; color: #FAF6F1; border-right: 1px solid rgba(255,255,255,0.1); }
+    .feature:last-child { border: none; }
+    .feature .emoji { font-size: 2.4rem; margin-bottom: 12px; }
+    .feature h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .feature p { font-size: 0.85rem; opacity: 0.75; }
+
+    .cta { padding: 80px 24px; text-align: center; background: #FAF6F1; }
+    .cta h2 { font-size: 2.2rem; color: #2c1a0e; margin-bottom: 12px; }
+    .cta p { color: #7a5e46; margin-bottom: 24px; }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-img { min-height: 300px; }
+      .hero-text { padding: 40px 24px; }
+      .hero h1 { font-size: 2.4rem; }
+      .menu-cols { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">☕ This is a demo site built by <a href="/">SiteGenius</a> — <a href="/get-a-quote">Get yours today</a></div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="tag">☕ Open 7 days · 6am–4pm</div>
+      <h1>Where Every Cup<br><span>Tells a Story</span></h1>
+      <p>Fresh roasted beans, artisan pastries, and all-day brunch in the heart of Newmarket. Your neighbourhood escape.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-warm">View Menu</a>
+        <a href="/get-a-quote" class="btn-warm-outline">Order Online</a>
+      </div>
+    </div>
+    <div class="hero-img">☕</div>
+  </section>
+
+  <div class="features">
+    <div class="feature"><div class="emoji">🫘</div><h3>Single Origin</h3><p>Ethically sourced beans roasted locally</p></div>
+    <div class="feature"><div class="emoji">🥐</div><h3>Fresh Baked</h3><p>Pastries baked in-house every morning</p></div>
+    <div class="feature"><div class="emoji">📶</div><h3>Free WiFi</h3><p>Work-friendly space with power outlets</p></div>
+  </div>
+
+  <section class="menu" id="menu">
+    <h2>Our Menu</h2>
+    <p>Freshly prepared, locally sourced, always delicious.</p>
+    <div class="menu-cols">
+      <div class="menu-section">
+        <h3>☕ Coffee & Drinks</h3>
+        <div class="menu-item"><span>Flat White</span><span>$5.00</span></div>
+        <div class="menu-item"><span>Long Black</span><span>$4.50</span></div>
+        <div class="menu-item"><span>Oat Mocha</span><span>$6.00</span></div>
+        <div class="menu-item"><span>Matcha Latte</span><span>$6.50</span></div>
+        <div class="menu-item"><span>Fresh Juice</span><span>$7.00</span></div>
+      </div>
+      <div class="menu-section">
+        <h3>🥑 Brunch</h3>
+        <div class="menu-item"><span>Smashed Avo on Sourdough</span><span>$18</span></div>
+        <div class="menu-item"><span>Eggs Benedict</span><span>$19.50</span></div>
+        <div class="menu-item"><span>Acai Bowl</span><span>$16</span></div>
+        <div class="menu-item"><span>Big Breakfast</span><span>$22</span></div>
+        <div class="menu-item"><span>Buttermilk Pancakes</span><span>$17</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Come Say Hello</h2>
+    <p>📍 42 Broadway, Newmarket, Auckland</p>
+    <a href="/get-a-quote" class="btn-warm">Order Online →</a>
+  </section>
+</body>
+</html>

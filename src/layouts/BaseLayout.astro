@@ -23,10 +23,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <link rel="canonical" href={canonicalURL} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <title>{title}</title>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -38,20 +38,76 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     "priceRange": "$$"
   })} />
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col relative md:cursor-none">
+  <!-- Interactive Background Glow -->
+  <div id="pointer-glow" class="pointer-events-none fixed inset-0 z-[-1] transition-opacity duration-300 hidden md:block"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot" class="fixed top-0 left-0 w-2.5 h-2.5 bg-neon-cyan rounded-full pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 hidden md:block" style="transform: translate(-50%, -50%); box-shadow: 0 0 10px rgba(0,229,255,0.5);"></div>
+  <div id="cursor-outline" class="fixed top-0 left-0 w-8 h-8 border border-neon-cyan/40 rounded-full pointer-events-none z-[9998] opacity-0 transition-all duration-150 ease-out hidden md:block" style="transform: translate(-50%, -50%);"></div>
+
   <Header />
-  <main class="flex-1"><slot /></main>
+  <main class="flex-1 relative z-10"><slot /></main>
   <Footer />
   <script>
+    // Scroll animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Mouse interactive effects
+    if (window.matchMedia("(pointer: fine)").matches) {
+      const dot = document.getElementById('cursor-dot');
+      const outline = document.getElementById('cursor-outline');
+      const glow = document.getElementById('pointer-glow');
+      
+      document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        
+        // Custom cursor tracking
+        if (dot && outline) {
+          dot.style.opacity = '1';
+          outline.style.opacity = '1';
+          dot.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
+          outline.style.transform = `translate(calc(${x}px - 50%), calc(${y}px - 50%))`;
+        }
+
+        // Global navy background gradient shifting
+        if (glow) {
+          glow.style.background = `radial-gradient(800px circle at ${x}px ${y}px, rgba(0, 229, 255, 0.05), transparent 40%)`;
+        }
+
+        // Highlight spotlight on tabs/cards
+        document.querySelectorAll('.glass-hover').forEach(card => {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+          card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+        });
+      });
+
+      // Cursor hover states on interactive tabs
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          if (outline) {
+            outline.classList.add('scale-150', 'bg-neon-cyan/10');
+            outline.style.borderColor = 'rgba(0,229,255,0.8)';
+          }
+        });
+        el.addEventListener('mouseleave', () => {
+          if (outline) {
+            outline.classList.remove('scale-150', 'bg-neon-cyan/10');
+            outline.style.borderColor = 'rgba(0,229,255,0.4)';
+          }
+        });
+      });
+    }
   </script>
 </body>
 </html>
