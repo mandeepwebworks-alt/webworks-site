@@ -10,100 +10,108 @@ const navLinks = [
 ];
 const currentPath = Astro.url.pathname;
 ---
-<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-space-900/80 backdrop-blur-xl">
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-space-900/80 backdrop-blur-xl border-b border-white/[0.06]">
   <div class="container-custom">
-    <!-- Top bar: Logo + CTA + Mobile toggle -->
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-[72px]">
+      <!-- Logo -->
       <a href="/" class="flex items-center group shrink-0">
-        <img src="/logo-full.png" alt="SiteGenius — Smart Web Development Solutions" class="h-11 w-auto -mb-0.5 drop-shadow-[0_0_8px_rgba(0,229,255,0.3)] transition-all group-hover:drop-shadow-[0_0_12px_rgba(0,229,255,0.5)] group-hover:scale-[1.02]" />
+        <img src="/logo-full.png" alt="SiteGenius — Smart Web Development Solutions" class="h-10 w-auto drop-shadow-[0_0_8px_rgba(0,229,255,0.3)] transition-all group-hover:drop-shadow-[0_0_12px_rgba(0,229,255,0.5)] group-hover:scale-[1.02]" />
       </a>
 
-      <!-- Desktop: CTA only (links are in floating island below) -->
-      <div class="hidden md:flex items-center gap-4">
-        <a href="/get-a-quote" class="btn-primary !px-6 !py-2.5 text-sm">Get a Quote</a>
+      <!-- Desktop Nav: clean horizontal links -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+              currentPath === link.href
+                ? 'text-neon-cyan'
+                : 'text-muted-200 hover:text-muted-100 hover:bg-white/[0.05]'
+            }`}
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Desktop CTA pill -->
+      <div class="hidden lg:flex items-center">
+        <a href="/get-a-quote" class="btn-primary !px-6 !py-2.5 text-sm rounded-full">Get a Quote</a>
       </div>
 
       <!-- Mobile hamburger -->
-      <button id="menu-toggle" class="md:hidden text-muted-100 hover:text-neon-cyan transition-colors" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <button id="menu-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-muted-100 hover:text-neon-cyan hover:bg-white/[0.05] transition-all" aria-label="Open menu">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
   </div>
 
-  <!-- Floating Island Nav (desktop only) -->
-  <div id="floating-nav" class="hidden md:flex justify-center pointer-events-none -mt-2 transition-all duration-500">
-    <nav class="pointer-events-auto inline-flex items-center gap-1 rounded-full border border-white/[0.08] bg-space-900/70 backdrop-blur-2xl px-2 py-1.5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]" id="island">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-            currentPath === link.href
-              ? 'text-space-900 bg-neon-cyan shadow-[0_0_12px_rgba(0,229,255,0.3)]'
-              : 'text-muted-200 hover:text-muted-100 hover:bg-white/[0.06]'
-          }`}
-        >
-          {link.name}
-        </a>
-      ))}
-    </nav>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 bg-space-900/95 backdrop-blur-xl z-50 hidden flex-col items-center justify-center gap-6">
-    <button id="menu-close" class="absolute top-6 right-6 text-muted-100 hover:text-neon-cyan transition-colors" aria-label="Close">
-      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-    {navLinks.map(link => (
-      <a href={link.href} class={`text-2xl font-heading font-semibold transition-colors ${currentPath === link.href ? 'text-neon-cyan' : 'text-muted-100 hover:text-neon-cyan'}`}>{link.name}</a>
-    ))}
-    <a href="/get-a-quote" class="btn-primary text-lg mt-4">Get a Quote</a>
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-white/[0.06]">
+    <div class="bg-space-900/95 backdrop-blur-2xl">
+      <div class="container-custom py-4 space-y-1">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
+              currentPath === link.href
+                ? 'text-neon-cyan bg-neon-cyan/[0.08]'
+                : 'text-muted-100 hover:text-neon-cyan hover:bg-white/[0.04]'
+            }`}
+          >
+            {link.name}
+          </a>
+        ))}
+        <div class="pt-3 pb-1">
+          <a href="/get-a-quote" class="btn-primary block text-center py-3 rounded-xl text-base">Get a Quote</a>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
-  const close = document.getElementById('menu-close');
-  const header = document.getElementById('header');
-  const floatingNav = document.getElementById('floating-nav');
-  const island = document.getElementById('island');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
 
-  // Mobile menu
-  toggle?.addEventListener('click', () => menu?.classList.replace('hidden','flex'));
-  close?.addEventListener('click', () => menu?.classList.replace('flex','hidden'));
-  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu?.classList.replace('flex','hidden')));
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    hamburgerIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+  }
 
-  // Scroll behavior: header bg + island shrink
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    hamburgerIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+  }
 
-    // Header background (always visible, no toggle needed)
-
-    // Hide island on scroll down, show on scroll up
-    if (floatingNav) {
-      if (y > 400 && y > lastScroll) {
-        floatingNav.style.opacity = '0';
-        floatingNav.style.transform = 'translateY(-20px)';
-        floatingNav.style.pointerEvents = 'none';
-      } else {
-        floatingNav.style.opacity = '1';
-        floatingNav.style.transform = 'translateY(0)';
-        floatingNav.style.pointerEvents = '';
-      }
+  toggle?.addEventListener('click', () => {
+    if (menu?.classList.contains('hidden')) {
+      openMenu();
+    } else {
+      closeMenu();
     }
+  });
 
-    // Compact island after scroll
-    if (island) {
-      if (y > 100) {
-        island.classList.add('!py-1', '!px-1.5', '!gap-0.5');
-        island.classList.add('!border-white/[0.12]');
-      } else {
-        island.classList.remove('!py-1', '!px-1.5', '!gap-0.5');
-        island.classList.remove('!border-white/[0.12]');
-      }
+  // Close on link click
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!menu?.contains(target) && !toggle?.contains(target) && !menu?.classList.contains('hidden')) {
+      closeMenu();
     }
+  });
 
-    lastScroll = y;
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu?.classList.contains('hidden')) {
+      closeMenu();
+    }
   });
 </script>
