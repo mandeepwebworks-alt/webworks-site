@@ -67,7 +67,6 @@ import Button from '../ui/Button.astro';
             </div>
 
             <div class="space-y-4">
-              <!-- Metric 1 -->
               <div>
                 <div class="flex justify-between text-sm mb-1">
                   <span class="text-muted-200">First Contentful Paint (Speed)</span>
@@ -77,8 +76,6 @@ import Button from '../ui/Button.astro';
                   <div class="bg-emerald-400 h-2 rounded-full w-[95%]"></div>
                 </div>
               </div>
-              
-              <!-- Metric 2 -->
               <div>
                 <div class="flex justify-between text-sm mb-1">
                   <span class="text-muted-200">SEO Optimizations</span>
@@ -88,8 +85,6 @@ import Button from '../ui/Button.astro';
                   <div class="bg-neon-cyan h-2 rounded-full w-[100%]"></div>
                 </div>
               </div>
-
-              <!-- Metric 3 -->
               <div>
                 <div class="flex justify-between text-sm mb-1">
                   <span class="text-muted-200">Accessibility</span>
@@ -114,8 +109,8 @@ import Button from '../ui/Button.astro';
     </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+  <!-- Scroll indicator — centered via flex, not absolute left calc -->
+  <div class="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce pointer-events-none">
     <div class="h-10 w-6 rounded-full border border-white/10 flex items-start justify-center p-1.5">
       <div class="h-2 w-1 rounded-full bg-neon-cyan/60 animate-pulse"></div>
     </div>
@@ -123,37 +118,35 @@ import Button from '../ui/Button.astro';
 </section>
 
 <script>
-  // Typing effect
+  // Typing effect — starts after 900ms so page is fully rendered first
   const words = ['plumbers', 'cafes', 'mechanics', 'florists', 'builders', 'salons', 'tradies', 'restaurants'];
   let wordIndex = 0, charIndex = 0, deleting = false;
   const typed = document.getElementById('typed-text');
+
   function tick() {
     if (!typed) return;
     const current = words[wordIndex];
-    typed.textContent = deleting ? current.slice(0, charIndex--) : current.slice(0, charIndex++);
+    if (deleting) {
+      charIndex--;
+      typed.textContent = current.slice(0, charIndex);
+    } else {
+      typed.textContent = current.slice(0, charIndex);
+      charIndex++;
+    }
     let delay = deleting ? 40 : 80;
-    if (!deleting && charIndex > current.length) { deleting = true; delay = 1500; }
-    else if (deleting && charIndex < 0) { deleting = false; wordIndex = (wordIndex + 1) % words.length; delay = 300; }
+    if (!deleting && charIndex > current.length) {
+      deleting = true;
+      delay = 1800;
+    } else if (deleting && charIndex <= 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      charIndex = 0;
+      delay = 400;
+    }
     setTimeout(tick, delay);
   }
-  tick();
 
-  // Counter
-  document.querySelectorAll('.counter').forEach(counter => {
-    const target = Number(counter.getAttribute('data-target') || '0');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        let cur = 0;
-        const step = target / 30;
-        const timer = setInterval(() => {
-          cur += step;
-          if (cur >= target) { counter.textContent = `${target}+`; clearInterval(timer); }
-          else { counter.textContent = `${Math.floor(cur)}+`; }
-        }, 35);
-        io.unobserve(entry.target);
-      });
-    }, { threshold: 0.3 });
-    io.observe(counter);
-  });
+  // Clear any initial content and start after page settles
+  if (typed) typed.textContent = '';
+  setTimeout(tick, 900);
 </script>
