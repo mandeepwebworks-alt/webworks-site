@@ -34,8 +34,12 @@ const initialState = {
 };
 
 export default function QuoteForm() {
+  const ideaParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('idea') : null;
   const [step, setStep] = useState(1);
-  const [formState, setFormState] = useState(initialState);
+  const [formState, setFormState] = useState({
+    ...initialState,
+    additional: ideaParam || '',
+  });
   const [features, setFeatures] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
