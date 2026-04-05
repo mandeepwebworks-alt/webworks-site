@@ -35,6 +35,7 @@ const initialState = {
 
 export default function QuoteForm() {
   const ideaParam = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('idea') : null;
+  const [ideaVisible, setIdeaVisible] = useState(!!ideaParam);
   const [step, setStep] = useState(1);
   const [formState, setFormState] = useState({
     ...initialState,
@@ -116,6 +117,19 @@ export default function QuoteForm() {
           </div>
         ))}
       </div>
+
+      {ideaVisible && ideaParam && (
+        <div className="mb-8 flex items-center gap-3 rounded-xl border border-neon-cyan/20 bg-neon-cyan/[0.06] px-5 py-4">
+          <svg className="h-5 w-5 flex-shrink-0 text-neon-cyan" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-medium text-neon-cyan uppercase tracking-wider mb-0.5">Your Idea</p>
+            <p className="text-muted-100 font-heading font-semibold">{ideaParam}</p>
+          </div>
+          <button type="button" onClick={() => setIdeaVisible(false)} className="text-muted-300 hover:text-muted-100 transition-colors" aria-label="Dismiss">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+      )}
 
       <form onSubmit={submitForm} className="space-y-8">
         <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
