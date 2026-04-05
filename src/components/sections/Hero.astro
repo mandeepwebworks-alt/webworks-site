@@ -1,6 +1,95 @@
 ---
 import Button from '../ui/Button.astro';
+
+const industries = [
+  {
+    id: 'cafe',
+    label: '☕ Café',
+    url: 'thedailygrind.co.nz',
+    accent: '#f59e0b',
+    badge: '● Open Now',
+    badgeColor: '#10b981',
+    headline: 'Great Coffee,',
+    sub: 'Warm Vibes',
+    desc: 'Freshly roasted beans, cabinet food & free WiFi. Your neighbourhood favourite.',
+    cta: 'View Menu',
+    ctaBg: '#f59e0b',
+    ctaText: '#1a1a2e',
+    tag1: 'Online Orders', tag2: 'Table Bookings', tag3: 'Loyalty Points',
+    gradFrom: '#78350f', gradTo: '#1c1008',
+    navLinks: ['Menu', 'About', 'Events', 'Find Us'],
+  },
+  {
+    id: 'tradie',
+    label: '🔧 Tradie',
+    url: 'proflowplumbing.co.nz',
+    accent: '#f97316',
+    badge: '⚡ 24/7 Emergency',
+    badgeColor: '#f97316',
+    headline: 'Your Local',
+    sub: 'Plumber',
+    desc: 'Fast, reliable plumbing for homes & businesses. Licensed & insured.',
+    cta: 'Get a Quote',
+    ctaBg: '#f97316',
+    ctaText: '#fff',
+    tag1: 'Residential', tag2: 'Commercial', tag3: 'Gas Fitting',
+    gradFrom: '#1e293b', gradTo: '#0f172a',
+    navLinks: ['Services', 'About', 'Gallery', 'Contact'],
+  },
+  {
+    id: 'salon',
+    label: '💅 Salon',
+    url: 'luxebeauty.co.nz',
+    accent: '#ec4899',
+    badge: '★ 5.0 Rated',
+    badgeColor: '#f472b6',
+    headline: 'Beauty',
+    sub: 'Redefined',
+    desc: 'Hair, nails, facials & more. Book your appointment online, any time.',
+    cta: 'Book Now',
+    ctaBg: '#ec4899',
+    ctaText: '#fff',
+    tag1: 'Hair & Colour', tag2: 'Nail Art', tag3: 'Facials',
+    gradFrom: '#831843', gradTo: '#1a0a12',
+    navLinks: ['Services', 'Gallery', 'Team', 'Book'],
+  },
+  {
+    id: 'retail',
+    label: '🛍 Retail',
+    url: 'shopkiwi.co.nz',
+    accent: '#8b5cf6',
+    badge: '🚚 Free Shipping $80+',
+    badgeColor: '#a78bfa',
+    headline: 'Shop the',
+    sub: 'Collection',
+    desc: 'Curated homewares, gifts & lifestyle. Delivered across NZ.',
+    cta: 'Shop Now',
+    ctaBg: '#8b5cf6',
+    ctaText: '#fff',
+    tag1: 'Homewares', tag2: 'Gifts', tag3: 'New Arrivals',
+    gradFrom: '#3b0764', gradTo: '#0d0118',
+    navLinks: ['Shop', 'Collections', 'Sale', 'About'],
+  },
+  {
+    id: 'startup',
+    label: '🚀 Startup',
+    url: 'launchpad.io',
+    accent: '#06b6d4',
+    badge: '🚀 Now Live',
+    badgeColor: '#22d3ee',
+    headline: 'The Future',
+    sub: 'Starts Here',
+    desc: 'We\'re changing how businesses manage their workflows. Join 2,000+ users.',
+    cta: 'Get Early Access',
+    ctaBg: '#06b6d4',
+    ctaText: '#000',
+    tag1: 'SaaS Platform', tag2: 'API Access', tag3: 'Free Trial',
+    gradFrom: '#0c4a6e', gradTo: '#040d18',
+    navLinks: ['Product', 'Pricing', 'Docs', 'Login'],
+  },
+];
 ---
+
 <section class="relative min-h-screen overflow-hidden">
   <!-- Background layers -->
   <div class="pointer-events-none absolute inset-0">
@@ -10,7 +99,8 @@ import Button from '../ui/Button.astro';
   </div>
 
   <div class="container-custom relative z-10 flex min-h-screen items-center pt-24 pb-16">
-    <div class="grid w-full items-center gap-16 lg:grid-cols-[1fr_420px]">
+    <div class="grid w-full items-center gap-16 lg:grid-cols-[1fr_440px]">
+
       <!-- Left: Copy -->
       <div>
         <div class="inline-flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.03] px-4 py-2 backdrop-blur-sm animate-fade-in">
@@ -22,12 +112,8 @@ import Button from '../ui/Button.astro';
         </div>
 
         <h1 class="mt-8 animate-slide-up">
-          <span class="block text-5xl font-bold leading-[1.1] text-muted-100 md:text-7xl lg:text-[5.2rem]">
-            Websites That Work
-          </span>
-          <span class="mt-2 block text-5xl font-bold leading-[1.1] gradient-text md:text-7xl lg:text-[5.2rem]">
-            As Hard As You Do
-          </span>
+          <span class="block text-5xl font-bold leading-[1.1] text-muted-100 md:text-7xl lg:text-[5.2rem]">Websites That Work</span>
+          <span class="mt-2 block text-5xl font-bold leading-[1.1] gradient-text md:text-7xl lg:text-[5.2rem]">As Hard As You Do</span>
         </h1>
 
         <p class="mt-8 max-w-lg text-lg leading-relaxed text-muted-200 animate-slide-up [animation-delay:150ms]">
@@ -35,7 +121,7 @@ import Button from '../ui/Button.astro';
         </p>
 
         <p class="mt-6 max-w-lg text-lg leading-relaxed text-muted-300 animate-slide-up [animation-delay:200ms]">
-          Professional, lightning-fast websites for New Zealand businesses. No jargon. No nonsense. Just results.
+          Professional, lightning-fast websites for businesses of all shapes. No jargon. No nonsense. Just results.
         </p>
 
         <div class="mt-10 flex flex-col gap-4 sm:flex-row animate-slide-up [animation-delay:300ms]">
@@ -44,72 +130,91 @@ import Button from '../ui/Button.astro';
         </div>
       </div>
 
-      <!-- Right: Live Performance & SEO Dashboard -->
+      <!-- Right: Industry Previewer -->
       <div class="hidden lg:block animate-slide-up [animation-delay:200ms]">
-        <div class="glow-frame glass rounded-2xl p-0 overflow-hidden shadow-2xl shadow-neon-cyan/[0.04]">
-          <!-- Browser top bar -->
-          <div class="flex items-center gap-2 border-b border-white/[0.06] px-4 py-3">
-            <span class="h-3 w-3 rounded-full bg-[#FF5F57]"></span>
-            <span class="h-3 w-3 rounded-full bg-[#FEBC2E]"></span>
-            <span class="h-3 w-3 rounded-full bg-[#28C840]"></span>
-            <span class="ml-3 text-xs text-muted-300 font-mono">Performance & SEO Audit</span>
+
+        <!-- Industry tabs -->
+        <div class="flex flex-wrap gap-2 mb-3" id="industry-tabs">
+          {industries.map((ind, i) => (
+            <button
+              data-industry={ind.id}
+              class={`industry-tab text-xs font-semibold px-3 py-1.5 rounded-full border transition-all duration-200 ${i === 0 ? 'active' : 'border-white/[0.08] text-muted-300 hover:text-muted-100 hover:border-white/20'}`}
+              style={i === 0 ? `border-color:${ind.accent}40;color:${ind.accent};background:${ind.accent}18;` : ''}
+            >
+              {ind.label}
+            </button>
+          ))}
+        </div>
+
+        <!-- Browser chrome -->
+        <div class="rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl" id="previewer-shell">
+          <!-- Top bar -->
+          <div class="flex items-center gap-2 bg-space-800/80 backdrop-blur-sm px-4 py-2.5 border-b border-white/[0.06]">
+            <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span>
+            <div class="ml-2 flex-1 bg-space-700/60 rounded-md px-3 py-1 flex items-center gap-2">
+              <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+              <span id="previewer-url" class="text-xs font-mono text-muted-300 truncate">thedailygrind.co.nz</span>
+            </div>
           </div>
-          <!-- Dashboard content -->
-          <div class="p-6 relative min-h-[320px]">
-            <div class="flex justify-between items-end mb-8">
-              <div>
-                <p class="text-sm font-semibold text-muted-200 uppercase tracking-wider mb-1">Overall Core Web Vitals</p>
-                <div class="flex items-center gap-2 text-3xl font-heading font-bold text-emerald-400">
-                  <span>99/100</span>
-                  <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                </div>
-              </div>
-            </div>
 
-            <div class="space-y-4">
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-muted-200">First Contentful Paint (Speed)</span>
-                  <span class="text-emerald-400">0.4s</span>
+          <!-- Preview panels — all pre-rendered, switched via CSS -->
+          <div class="relative overflow-hidden" style="height:310px;">
+            {industries.map((ind, i) => (
+              <div
+                id={`panel-${ind.id}`}
+                class={`industry-panel absolute inset-0 transition-all duration-200 ease-out ${i === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}
+                style={`background:linear-gradient(160deg, ${ind.gradFrom}, ${ind.gradTo});`}
+              >
+                <!-- Fake nav -->
+                <div class="flex items-center justify-between px-5 py-3 border-b border-white/[0.06]">
+                  <span class="text-xs font-bold text-white/90 uppercase tracking-wider">{ind.url.split('.')[0]}</span>
+                  <div class="flex items-center gap-4">
+                    {ind.navLinks.slice(0,3).map(link => (
+                      <span class="text-[10px] text-white/50">{link}</span>
+                    ))}
+                    <span class="text-[10px] font-semibold px-2.5 py-1 rounded-full text-white" style={`background:${ind.accent}30;`}>{ind.navLinks[3]}</span>
+                  </div>
                 </div>
-                <div class="w-full bg-white/5 rounded-full h-2">
-                  <div class="bg-emerald-400 h-2 rounded-full w-[95%]"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-muted-200">SEO Optimizations</span>
-                  <span class="text-neon-cyan">Perfect</span>
-                </div>
-                <div class="w-full bg-white/5 rounded-full h-2">
-                  <div class="bg-neon-cyan h-2 rounded-full w-[100%]"></div>
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-between text-sm mb-1">
-                  <span class="text-muted-200">Accessibility</span>
-                  <span class="text-neon-purple">100%</span>
-                </div>
-                <div class="w-full bg-white/5 rounded-full h-2">
-                  <div class="bg-neon-purple h-2 rounded-full w-[100%]"></div>
-                </div>
-              </div>
-            </div>
 
-            <div class="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between">
-              <span class="text-xs text-muted-300">Audited just now</span>
-              <span class="inline-flex items-center gap-1.5 rounded-lg bg-emerald-400/[0.08] px-2 py-1 text-xs text-emerald-400 border border-emerald-400/20">
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Lightning Fast
-              </span>
-            </div>
+                <!-- Hero content -->
+                <div class="px-5 pt-5 pb-4">
+                  <!-- Badge -->
+                  <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold px-2.5 py-1 rounded-full mb-3" style={`background:${ind.badgeColor}20;color:${ind.badgeColor};`}>
+                    {ind.badge}
+                  </span>
+                  <!-- Headline -->
+                  <h3 class="text-2xl font-black text-white leading-tight mb-1">
+                    {ind.headline}<br/>
+                    <span style={`color:${ind.accent}`}>{ind.sub}</span>
+                  </h3>
+                  <p class="text-xs text-white/50 leading-relaxed mb-4 max-w-[260px]">{ind.desc}</p>
+                  <!-- CTA -->
+                  <button class="text-xs font-bold px-4 py-2 rounded-lg" style={`background:${ind.ctaBg};color:${ind.ctaText};`}>
+                    {ind.cta} →
+                  </button>
+                </div>
+
+                <!-- Feature tags -->
+                <div class="absolute bottom-0 left-0 right-0 px-5 py-3 border-t border-white/[0.06] flex items-center gap-2">
+                  {[ind.tag1, ind.tag2, ind.tag3].map(tag => (
+                    <span class="text-[10px] font-medium px-2 py-1 rounded-md text-white/60" style={`background:${ind.accent}15;`}>{tag}</span>
+                  ))}
+                  <span class="ml-auto text-[10px] text-white/30 font-mono">SiteGenius ✦</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        <p class="text-center text-[11px] text-muted-300 mt-2.5">← Pick your industry to see what we'd build</p>
       </div>
+
     </div>
   </div>
 
-  <!-- Scroll indicator — centered via flex, not absolute left calc -->
+  <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce pointer-events-none">
     <div class="h-10 w-6 rounded-full border border-white/10 flex items-start justify-center p-1.5">
       <div class="h-2 w-1 rounded-full bg-neon-cyan/60 animate-pulse"></div>
@@ -118,35 +223,75 @@ import Button from '../ui/Button.astro';
 </section>
 
 <script>
-  // Typing effect — starts after 900ms so page is fully rendered first
-  const words = ['plumbers', 'cafes', 'mechanics', 'florists', 'builders', 'salons', 'tradies', 'restaurants'];
+  // ── Industry Previewer ──
+  const tabData: Record<string, { accent: string; url: string }> = {
+    cafe:    { accent: '#f59e0b', url: 'thedailygrind.co.nz' },
+    tradie:  { accent: '#f97316', url: 'proflowplumbing.co.nz' },
+    salon:   { accent: '#ec4899', url: 'luxebeauty.co.nz' },
+    retail:  { accent: '#8b5cf6', url: 'shopkiwi.co.nz' },
+    startup: { accent: '#06b6d4', url: 'launchpad.io' },
+  };
+
+  let active = 'cafe';
+
+  function switchIndustry(id: string) {
+    if (id === active) return;
+
+    // Swap panel
+    const prev = document.getElementById(`panel-${active}`);
+    const next = document.getElementById(`panel-${id}`);
+    if (prev) { prev.classList.remove('opacity-100', 'translate-y-0'); prev.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none'); }
+    if (next) { next.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none'); next.classList.add('opacity-100', 'translate-y-0'); }
+
+    // Swap tab styles
+    const prevTab = document.querySelector(`[data-industry="${active}"]`) as HTMLElement;
+    const nextTab = document.querySelector(`[data-industry="${id}"]`) as HTMLElement;
+    if (prevTab) { prevTab.className = 'industry-tab text-xs font-semibold px-3 py-1.5 rounded-full border transition-all duration-200 border-white/[0.08] text-muted-300 hover:text-muted-100 hover:border-white/20'; prevTab.removeAttribute('style'); }
+    if (nextTab) {
+      const { accent } = tabData[id];
+      nextTab.className = 'industry-tab text-xs font-semibold px-3 py-1.5 rounded-full border transition-all duration-200 active';
+      nextTab.style.cssText = `border-color:${accent}40;color:${accent};background:${accent}18;`;
+    }
+
+    // Update URL bar
+    const urlEl = document.getElementById('previewer-url');
+    if (urlEl) urlEl.textContent = tabData[id].url;
+
+    active = id;
+  }
+
+  document.getElementById('industry-tabs')?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('[data-industry]') as HTMLElement;
+    if (btn) switchIndustry(btn.dataset.industry!);
+  });
+
+  // Auto-rotate every 3s when user hasn't interacted
+  const ids = Object.keys(tabData);
+  let autoIdx = 1;
+  let autoTimer = setInterval(() => {
+    switchIndustry(ids[autoIdx]);
+    autoIdx = (autoIdx + 1) % ids.length;
+  }, 3000);
+
+  // Stop auto-rotate on manual click
+  document.getElementById('industry-tabs')?.addEventListener('click', () => {
+    clearInterval(autoTimer);
+  }, { once: true });
+
+  // ── Typing effect ──
+  const words = ['plumbers', 'cafes', 'mechanics', 'florists', 'builders', 'salons', 'tradies', 'startups'];
   let wordIndex = 0, charIndex = 0, deleting = false;
   const typed = document.getElementById('typed-text');
 
   function tick() {
     if (!typed) return;
     const current = words[wordIndex];
-    if (deleting) {
-      charIndex--;
-      typed.textContent = current.slice(0, charIndex);
-    } else {
-      typed.textContent = current.slice(0, charIndex);
-      charIndex++;
-    }
+    typed.textContent = deleting ? current.slice(0, --charIndex) : current.slice(0, charIndex++);
     let delay = deleting ? 40 : 80;
-    if (!deleting && charIndex > current.length) {
-      deleting = true;
-      delay = 1800;
-    } else if (deleting && charIndex <= 0) {
-      deleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      charIndex = 0;
-      delay = 400;
-    }
+    if (!deleting && charIndex > current.length) { deleting = true; delay = 1800; }
+    else if (deleting && charIndex <= 0) { deleting = false; wordIndex = (wordIndex + 1) % words.length; charIndex = 0; delay = 400; }
     setTimeout(tick, delay);
   }
-
-  // Clear any initial content and start after page settles
   if (typed) typed.textContent = '';
   setTimeout(tick, 900);
 </script>

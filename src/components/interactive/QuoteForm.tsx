@@ -23,7 +23,6 @@ const featureOptions = [
 const initialState = {
   name: '',
   email: '',
-  phone: '',
   business: '',
   project_type: '',
   pages: 'Not sure',
@@ -144,9 +143,6 @@ export default function QuoteForm() {
               </Field>
               <Field label="Email *">
                 <input required type="email" name="email" value={formState.email} onChange={(e) => updateField('email', e.target.value)} className={inputClass} />
-              </Field>
-              <Field label="Phone">
-                <input name="phone" value={formState.phone} onChange={(e) => updateField('phone', e.target.value)} className={inputClass} />
               </Field>
               <Field label="Business Name">
                 <input name="business" value={formState.business} onChange={(e) => updateField('business', e.target.value)} className={inputClass} />
