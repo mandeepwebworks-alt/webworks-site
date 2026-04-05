@@ -2,50 +2,66 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABanner from '../components/sections/CTABanner.astro';
 ---
-<BaseLayout title="About — SiteGenius" description="Meet the person behind SiteGenius. NZ-based web design with automotive industry expertise.">
+<BaseLayout title="About Us — SiteGenius" description="Meet the team behind SiteGenius. We build fast, affordable websites for NZ businesses.">
   <section class="pt-32 pb-16 grid-bg">
     <div class="container-custom">
-      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">The Person Behind <span class="gradient-text">the Pixels</span></h1>
+      <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block animate-slide-up">About Us</span>
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">We Build Websites That <span class="gradient-text">Actually Work</span></h1>
+      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">A small team with big ambitions — helping NZ businesses win online.</p>
     </div>
   </section>
 
+  <!-- Our Story -->
   <section class="section-padding">
     <div class="container-custom">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="animate-on-scroll">
-          <div class="aspect-square max-w-md mx-auto rounded-2xl bg-gradient-to-br from-neon-cyan/20 to-neon-purple/20 border border-white/5 flex items-center justify-center">
-            <div class="text-center">
-              <span class="text-6xl mb-4 block">👨‍💻</span>
-              <p class="text-muted-300 text-sm">Photo coming soon</p>
-            </div>
-          </div>
-        </div>
-        <div class="animate-on-scroll">
-          <h2 class="text-2xl font-heading font-bold mb-6">Hey, I'm the person behind <span class="gradient-text">SiteGenius</span>.</h2>
-          <div class="space-y-4 text-muted-200 leading-relaxed">
-            <p>I started SiteGenius because I saw too many local businesses either paying way too much for a basic website, or struggling with DIY builders that never quite looked right.</p>
-            <p>With a background in both the <strong class="text-muted-100">automotive industry</strong> and <strong class="text-muted-100">IT</strong>, I bring a unique perspective. I understand what it's like to run a hands-on business — and I know that your website should work as hard as you do.</p>
-            <p>I use the latest <strong class="text-muted-100">AI-powered tools</strong> and <strong class="text-muted-100">modern web technologies</strong> to build websites faster and more affordably than traditional agencies — and I pass those savings directly on to you.</p>
-            <p>Based in <strong class="text-muted-100">New Zealand</strong>, working with businesses across the country.</p>
-          </div>
+      <div class="max-w-3xl mx-auto animate-on-scroll">
+        <h2 class="text-3xl font-heading font-bold mb-8">Our <span class="gradient-text">Story</span></h2>
+        <div class="space-y-5 text-muted-200 leading-relaxed text-lg">
+          <p>We started SiteGenius because we saw too many local businesses either paying way too much for a basic website, or struggling with DIY builders that never quite looked right.</p>
+          <p>With backgrounds in both <strong class="text-muted-100">hands-on industries</strong> and <strong class="text-muted-100">modern tech</strong>, we understand what it's like to run a real business — and we know your website should work as hard as you do.</p>
+          <p>We use the latest <strong class="text-muted-100">AI-powered tools</strong> and <strong class="text-muted-100">cutting-edge web technologies</strong> to build websites faster and more affordably than traditional agencies — and we pass those savings directly on to you.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose -->
-  <section class="section-padding bg-space-800/50">
+  <!-- Our Values -->
+  <section class="section-padding border-t border-white/[0.04]">
     <div class="container-custom">
-      <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">Why Work <span class="gradient-text">With Us?</span></h2>
+      <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">What We <span class="gradient-text">Stand For</span></h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { icon: '🤝', title: 'One Point of Contact', desc: 'You deal directly with me. No account managers, no runarounds. Just straight-up honest communication.' },
-          { icon: '🇳🇿', title: 'NZ-Based Support', desc: "I'm right here in New Zealand. Same timezone, same understanding of local business." },
-          { icon: '💬', title: 'Plain English', desc: 'No jargon, no tech-speak. I explain everything in words that actually make sense.' },
-          { icon: '💰', title: 'Fair, Transparent Pricing', desc: 'What you see is what you pay. No hidden fees, no surprise invoices.' },
+          {
+            title: 'Straight Talking',
+            desc: 'No jargon, no runarounds. We explain everything in plain English and keep you in the loop.',
+            icon: 'M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z',
+            color: 'neon-cyan',
+          },
+          {
+            title: 'Quality First',
+            desc: 'Every site we build is fast, responsive, and built to convert. We don\'t cut corners.',
+            icon: 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z',
+            color: 'amber-400',
+          },
+          {
+            title: 'Fair Pricing',
+            desc: 'What you see is what you pay. No hidden fees, no surprise invoices, no lock-in contracts.',
+            icon: 'M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z',
+            color: 'emerald-400',
+          },
+          {
+            title: 'Long-Term Partners',
+            desc: 'We\'re not just building a website — we\'re building a relationship. We grow with you.',
+            icon: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+            color: 'neon-purple',
+          },
         ].map(item => (
           <div class="glass-hover rounded-xl p-8 text-center animate-on-scroll">
-            <span class="text-4xl mb-4 block">{item.icon}</span>
+            <div class={`w-14 h-14 rounded-xl bg-${item.color}/10 flex items-center justify-center mb-5 mx-auto`}>
+              <svg class={`w-7 h-7 text-${item.color}`} fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d={item.icon} />
+              </svg>
+            </div>
             <h3 class="text-lg font-heading font-bold text-muted-100 mb-2">{item.title}</h3>
             <p class="text-sm text-muted-200">{item.desc}</p>
           </div>
@@ -54,11 +70,30 @@ import CTABanner from '../components/sections/CTABanner.astro';
     </div>
   </section>
 
+  <!-- Stats -->
+  <section class="section-padding border-t border-white/[0.04]">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        {[
+          { number: '50+', label: 'Websites Launched' },
+          { number: '100%', label: 'NZ-Based Team' },
+          { number: '4.9★', label: 'Average Rating' },
+          { number: '24hr', label: 'Response Time' },
+        ].map(stat => (
+          <div class="animate-on-scroll">
+            <p class="text-4xl md:text-5xl font-black gradient-text mb-2">{stat.number}</p>
+            <p class="text-sm text-muted-200 uppercase tracking-wider">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Tech -->
-  <section class="section-padding">
+  <section class="section-padding border-t border-white/[0.04]">
     <div class="container-custom">
       <h2 class="text-3xl font-heading font-bold text-center mb-12 animate-on-scroll">Tools of the <span class="gradient-text">Trade</span></h2>
-      <div class="flex flex-wrap justify-center gap-4 animate-on-scroll">
+      <div class="flex flex-wrap justify-center gap-3 animate-on-scroll">
         {['HTML5', 'CSS3', 'JavaScript', 'React', 'Astro', 'Tailwind CSS', 'WordPress', 'Shopify', 'Google Analytics', 'Figma', 'Node.js', 'Git'].map(t => (
           <span class="glass rounded-lg px-4 py-2 text-sm text-muted-200 font-mono">{t}</span>
         ))}
