@@ -21,7 +21,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Citizenship NZ',
-    category: 'Immigration',
+    category: 'Tool',
     description: 'Trusted immigration advisory service helping people navigate residency and citizenship pathways with expert guidance.',
     tags: ['Web Design', 'Lead Gen', 'SEO'],
     gradient: 'from-blue-600/30 via-indigo-500/20 to-slate-900',
@@ -115,4 +115,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const categories = ['All', 'Real Estate', 'Immigration', 'Automotive', 'Cleaning', 'Beauty', 'Health', 'Hospitality', 'Trade', 'Retail', 'Professional'];
+export const categories = ['All', 'Real Estate', 'Tool', 'Automotive', 'Cleaning', 'Beauty', 'Health', 'Hospitality', 'Trade', 'Retail', 'Professional'];
