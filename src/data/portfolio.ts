@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     title: 'Citizenship NZ',
     category: 'Tool',
-    description: 'Trusted immigration advisory service helping people navigate residency and citizenship pathways with expert guidance.',
+    description: 'Free NZ citizenship eligibility calculator for residents. Enter your visa date, log overseas trips, and instantly see when you can apply for citizenship.',
     tags: ['Web Design', 'Lead Gen', 'SEO'],
     gradient: 'from-blue-600/30 via-indigo-500/20 to-slate-900',
     url: 'https://citizenship.co.nz',
