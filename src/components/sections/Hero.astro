@@ -85,7 +85,7 @@ const industries = [
     headline: 'The Future',
     sub: 'Starts Here',
     desc: "We're changing how businesses manage their workflows. Join 2,000+ users.",
-    cta: 'Get Early Access',
+    cta: 'Get Access',
     ctaBg: '#06b6d4',
     ctaText: '#000',
     tags: ['SaaS Platform', 'API Access', 'Free Trial'],
@@ -116,8 +116,8 @@ const industries = [
         </div>
 
         <h1 class="mt-8 animate-slide-up">
-          <span class="block text-5xl font-bold leading-[1.1] text-muted-100 md:text-7xl lg:text-[5.2rem]">Websites That Work</span>
-          <span class="mt-2 block text-5xl font-bold leading-[1.1] gradient-text md:text-7xl lg:text-[5.2rem]">As Hard As You Do</span>
+          <span class="block text-4xl font-bold leading-[1.1] text-muted-100 md:text-7xl lg:text-[5.2rem]">Websites That Work</span>
+          <span class="mt-2 block text-4xl font-bold leading-[1.1] gradient-text md:text-7xl lg:text-[5.2rem]">As Hard As You Do</span>
         </h1>
 
         <!-- Typed line — word syncs with active industry -->
@@ -129,9 +129,9 @@ const industries = [
           Professional, lightning-fast websites for businesses of all shapes. No jargon. No nonsense. Just results.
         </p>
 
-        <div class="mt-10 flex flex-col gap-4 sm:flex-row animate-slide-up [animation-delay:300ms]">
-          <Button href="/get-a-quote">Get a Free Quote</Button>
-          <Button href="/portfolio" variant="secondary">See Our Work</Button>
+        <div class="mt-10 flex flex-row gap-3 animate-slide-up [animation-delay:300ms]">
+          <Button href="/get-a-quote" class="flex-1 !px-4 !py-3 text-sm lg:flex-none lg:!px-8 lg:!py-4 lg:text-base">Get a Free Quote</Button>
+          <Button href="/portfolio" variant="secondary" class="flex-1 !px-4 !py-3 text-sm lg:flex-none lg:!px-8 lg:!py-4 lg:text-base">See Our Work</Button>
         </div>
 
         <!-- ── Mobile industry strip (lg:hidden) ── -->
@@ -149,33 +149,48 @@ const industries = [
             ))}
           </div>
 
-          <!-- Mobile slim panels -->
-          <div class="relative mt-3 rounded-xl overflow-hidden" style="height:118px;">
+          <!-- Mobile panels — full browser chrome, matches desktop -->
+          <div class="relative mt-3 rounded-2xl overflow-hidden border border-white/[0.08] shadow-xl" style="height:220px;">
+            <!-- Mini browser bar -->
+            <div class="flex items-center gap-1.5 px-3 py-2 bg-space-800/90 border-b border-white/[0.06] relative z-10">
+              <span class="h-2 w-2 rounded-full bg-[#FF5F57]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#FEBC2E]"></span>
+              <span class="h-2 w-2 rounded-full bg-[#28C840]"></span>
+              <div class="ml-1.5 flex-1 bg-space-700/60 rounded px-2 py-0.5 flex items-center gap-1.5">
+                <svg class="w-2.5 h-2.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                <span id="mobile-url" class="text-[10px] font-mono text-muted-300 truncate">{industries[0].url}</span>
+              </div>
+            </div>
             {industries.map((ind, i) => (
               <div
                 id={`mobile-panel-${ind.id}`}
-                class={`industry-panel-mobile absolute inset-0 transition-all duration-200 ease-out ${i === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}
-                style={`background:linear-gradient(135deg, ${ind.gradFrom}, ${ind.gradTo});`}
+                class={`industry-panel-mobile absolute inset-0 pt-[34px] transition-all duration-200 ease-out ${i === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}
+                style={`background:linear-gradient(160deg, ${ind.gradFrom}, ${ind.gradTo});`}
               >
-                <div class="flex h-full flex-col justify-between px-4 py-3">
-                  <div class="flex items-start justify-between gap-2">
-                    <div>
-                      <p class="text-base font-black text-white leading-tight">
-                        {ind.headline} <span style={`color:${ind.accent}`}>{ind.sub}</span>
-                      </p>
-                    </div>
-                    <span class="shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full" style={`background:${ind.badgeColor}25;color:${ind.badgeColor};`}>
-                      {ind.badge}
-                    </span>
+                <!-- Fake nav -->
+                <div class="flex items-center justify-between px-4 py-2 border-b border-white/[0.06]">
+                  <span class="text-[10px] font-bold text-white/90 uppercase tracking-wider">{ind.url.split('.')[0]}</span>
+                  <div class="flex items-center gap-3">
+                    {ind.navLinks.slice(0,2).map(link => (
+                      <span class="text-[9px] text-white/40">{link}</span>
+                    ))}
+                    <span class="text-[9px] font-semibold px-2 py-0.5 rounded-full text-white" style={`background:${ind.accent}30;`}>{ind.navLinks[3]}</span>
                   </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex gap-1.5">
-                      {ind.tags.slice(0,3).map(tag => (
-                        <span class="text-[10px] font-medium px-2 py-0.5 rounded-md text-white/60" style={`background:${ind.accent}18;`}>{tag}</span>
-                      ))}
-                    </div>
-                    <span class="text-[10px] font-bold px-2.5 py-1 rounded-lg" style={`background:${ind.ctaBg};color:${ind.ctaText};`}>{ind.cta}</span>
-                  </div>
+                </div>
+                <!-- Content -->
+                <div class="px-4 pt-3 pb-2">
+                  <span class="inline-flex items-center gap-1 text-[9px] font-semibold px-2 py-0.5 rounded-full mb-2" style={`background:${ind.badgeColor}20;color:${ind.badgeColor};`}>{ind.badge}</span>
+                  <h3 class="text-lg font-black text-white leading-tight">
+                    {ind.headline} <span style={`color:${ind.accent}`}>{ind.sub}</span>
+                  </h3>
+                  <p class="text-[10px] text-white/50 mt-1 leading-relaxed line-clamp-2">{ind.desc}</p>
+                </div>
+                <!-- Tags + CTA -->
+                <div class="absolute bottom-0 left-0 right-0 px-4 py-2.5 border-t border-white/[0.06] flex items-center gap-2">
+                  {ind.tags.slice(0,2).map(tag => (
+                    <span class="text-[9px] font-medium px-1.5 py-0.5 rounded text-white/60 whitespace-nowrap" style={`background:${ind.accent}15;`}>{tag}</span>
+                  ))}
+                  <span class="ml-auto text-[10px] font-bold px-3 py-1 rounded-lg shrink-0 whitespace-nowrap" style={`background:${ind.ctaBg};color:${ind.ctaText};`}>{ind.cta} →</span>
                 </div>
               </div>
             ))}
@@ -264,8 +279,8 @@ const industries = [
     </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce pointer-events-none">
+  <!-- Scroll indicator — desktop only -->
+  <div class="hidden lg:flex absolute bottom-8 left-0 right-0 justify-center animate-bounce pointer-events-none">
     <div class="h-10 w-6 rounded-full border border-white/10 flex items-start justify-center p-1.5">
       <div class="h-2 w-1 rounded-full bg-neon-cyan/60 animate-pulse"></div>
     </div>
@@ -334,9 +349,11 @@ const industries = [
       t.style.cssText = `border-color:${accent}40;color:${accent};background:${accent}18;`;
     });
 
-    // Update URL bar
+    // Update URL bars (desktop + mobile)
     const urlEl = document.getElementById('previewer-url');
     if (urlEl) urlEl.textContent = url;
+    const mobileUrlEl = document.getElementById('mobile-url');
+    if (mobileUrlEl) mobileUrlEl.textContent = url;
 
     // Sync typed text
     typeWord(word);
