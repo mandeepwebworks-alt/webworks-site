@@ -52,20 +52,40 @@ import { projects, categories } from '../data/portfolio';
     </div>
 
     <!-- Browser address bar -->
-    <div id="modal-addressbar" class="hidden items-center gap-2 px-4 py-2 bg-space-700/60 border-b border-white/[0.06] shrink-0">
+    <div id="modal-addressbar" class="hidden items-center gap-3 px-4 py-2 bg-space-800/80 border-b border-white/[0.06] shrink-0">
+      <!-- Traffic lights -->
       <div class="flex items-center gap-1.5 shrink-0">
         <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span>
         <span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span>
         <span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span>
       </div>
+      <!-- URL bar -->
       <div class="flex-1 flex items-center gap-2 bg-space-900/60 rounded-lg px-3 py-1.5 min-w-0">
         <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
         <span id="modal-address-url" class="text-xs font-mono text-muted-200 truncate"></span>
       </div>
+      <!-- Viewport toggles -->
+      <div class="flex items-center gap-1 shrink-0 bg-space-900/60 rounded-lg p-1">
+        <!-- Desktop -->
+        <button data-viewport="desktop" title="Desktop view"
+          class="viewport-btn active-viewport rounded-md p-1.5 text-neon-cyan bg-white/[0.08] transition-all hover:text-muted-100">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z"/></svg>
+        </button>
+        <!-- Tablet -->
+        <button data-viewport="tablet" title="Tablet view"
+          class="viewport-btn rounded-md p-1.5 text-muted-300 transition-all hover:text-muted-100">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5h3m-6.75 2.25h10.5a2.25 2.25 0 002.25-2.25v-15a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 4.5v15a2.25 2.25 0 002.25 2.25z"/></svg>
+        </button>
+        <!-- Mobile -->
+        <button data-viewport="mobile" title="Mobile view"
+          class="viewport-btn rounded-md p-1.5 text-muted-300 transition-all hover:text-muted-100">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+        </button>
+      </div>
     </div>
 
     <!-- Iframe area -->
-    <div class="relative flex-1 min-h-0 bg-white">
+    <div class="relative flex-1 min-h-0 bg-space-900 overflow-auto" id="modal-iframe-wrap">
       <!-- Loading spinner -->
       <div id="modal-loader" class="absolute inset-0 flex flex-col items-center justify-center bg-space-900 z-10 gap-4">
         <div class="h-10 w-10 rounded-full border-2 border-neon-cyan/20 border-t-neon-cyan animate-spin"></div>
@@ -86,8 +106,11 @@ import { projects, categories } from '../data/portfolio';
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
       </div>
-      <iframe id="modal-iframe" src="" class="w-full h-full border-0" title="Site preview"
-        sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+      <!-- Iframe wrapper — width controlled by viewport toggle -->
+      <div id="modal-device-wrap" class="w-full h-full transition-all duration-300 mx-auto">
+        <iframe id="modal-iframe" src="" class="w-full h-full border-0 block" title="Site preview"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </div>
     </div>
   </div>
 
@@ -162,6 +185,17 @@ import { projects, categories } from '../data/portfolio';
       modalAddressBar.classList.remove('flex');
     }
 
+    // Reset viewport to desktop
+    deviceWrap.style.width = '100%';
+    deviceWrap.style.height = '100%';
+    viewportBtns.forEach(b => {
+      const isDesktop = b.dataset.viewport === 'desktop';
+      b.classList.toggle('active-viewport', isDesktop);
+      b.classList.toggle('text-neon-cyan',  isDesktop);
+      b.classList.toggle('bg-white/[0.08]', isDesktop);
+      b.classList.toggle('text-muted-300',  !isDesktop);
+    });
+
     // Load iframe (all sites — external and internal demos)
     showLoader();
     modalIframe.src = data.url || '';
@@ -190,6 +224,32 @@ import { projects, categories } from '../data/portfolio';
   }
 
   modalIframe.addEventListener('load', onIframeLoad);
+
+  // ── Viewport toggles ──
+  const deviceWrap = document.getElementById('modal-device-wrap')!;
+  const viewportBtns = document.querySelectorAll<HTMLElement>('.viewport-btn');
+
+  const viewportSizes: Record<string, { width: string; height: string }> = {
+    desktop: { width: '100%',  height: '100%'  },
+    tablet:  { width: '768px', height: '100%'  },
+    mobile:  { width: '390px', height: '100%'  },
+  };
+
+  viewportBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const vp = btn.dataset.viewport!;
+      const { width, height } = viewportSizes[vp];
+      deviceWrap.style.width  = width;
+      deviceWrap.style.height = height;
+      deviceWrap.style.minHeight = height === '100%' ? '' : '100%';
+      viewportBtns.forEach(b => {
+        b.classList.toggle('active-viewport', b === btn);
+        b.classList.toggle('text-neon-cyan',  b === btn);
+        b.classList.toggle('bg-white/[0.08]', b === btn);
+        b.classList.toggle('text-muted-300',  b !== btn);
+      });
+    });
+  });
 
   document.querySelectorAll('.portfolio-card').forEach(card => {
     card.addEventListener('click', () => {
