@@ -20,6 +20,15 @@ export const projects: Project[] = [
     live: true,
   },
   {
+    title: 'Citizenship NZ',
+    category: 'Immigration',
+    description: 'Trusted immigration advisory service helping people navigate residency and citizenship pathways with expert guidance.',
+    tags: ['Web Design', 'Lead Gen', 'SEO'],
+    gradient: 'from-blue-600/30 via-indigo-500/20 to-slate-900',
+    url: 'https://citizenship.co.nz',
+    live: true,
+  },
+  {
     title: 'Melbourne Scratch Repairs',
     category: 'Automotive',
     description: 'Premium paint & panel repair specialists in Melbourne. Mobile service with lifetime guarantee on all repairs.',
@@ -29,12 +38,30 @@ export const projects: Project[] = [
     live: true,
   },
   {
+    title: 'Smart Auto Care',
+    category: 'Automotive',
+    description: 'Professional car detailing and paint protection in Australia. Ceramic coatings, scratch removal, and full valet services.',
+    tags: ['Web Design', 'Booking', 'Branding'],
+    gradient: 'from-red-600/30 via-rose-500/20 to-slate-900',
+    url: 'https://smartautocare.com.au',
+    live: true,
+  },
+  {
     title: 'Shine Auto Spa',
     category: 'Automotive',
     description: 'Canada\'s premier auto detailing studio. Ceramic coating, PPF, and luxury vehicle care with online booking.',
     tags: ['E-Commerce', 'Booking System', 'Branding'],
     gradient: 'from-amber-500/30 via-yellow-400/20 to-slate-900',
     url: 'https://shineautospa.ca',
+    live: true,
+  },
+  {
+    title: 'Hume City Cleaners',
+    category: 'Cleaning',
+    description: 'Reliable residential and commercial cleaning services across Melbourne\'s north. Easy online quotes and flexible scheduling.',
+    tags: ['Web Design', 'Lead Gen', 'Mobile-First'],
+    gradient: 'from-teal-500/30 via-emerald-400/20 to-slate-900',
+    url: 'https://humecitycleaners.com.au',
     live: true,
   },
   // ── Demo Showcase Sites ──
@@ -88,4 +115,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const categories = ['All', 'Real Estate', 'Automotive', 'Beauty', 'Health', 'Hospitality', 'Trade', 'Retail', 'Professional'];
+export const categories = ['All', 'Real Estate', 'Immigration', 'Automotive', 'Cleaning', 'Beauty', 'Health', 'Hospitality', 'Trade', 'Retail', 'Professional'];
