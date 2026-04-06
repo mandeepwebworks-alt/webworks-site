@@ -2,7 +2,6 @@
 interface Props { title: string; category: string; description: string; tags: string[]; gradient: string; url?: string; live?: boolean; }
 const { title, category, description, tags, gradient, url } = Astro.props;
 const isExternal = url?.startsWith('http');
-const domain = isExternal ? url!.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
 const screenshotUrl = isExternal ? `https://api.microlink.io/?url=${encodeURIComponent(url!)}&screenshot=true&meta=false&embed=screenshot.url` : null;
 
 const projectData = JSON.stringify({ title, category, description, tags, url, isExternal, screenshotUrl, gradient });
@@ -53,12 +52,6 @@ const projectData = JSON.stringify({ title, category, description, tags, url, is
       </span>
     </div>
   </div>
-  {isExternal && domain && (
-    <div class="flex items-center gap-2 px-4 py-2 border-b border-white/[0.06] bg-space-800/60">
-      <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-      <span class="text-xs font-mono text-muted-300 truncate">{domain}</span>
-    </div>
-  )}
   <div class="p-6">
     <div class="flex items-center gap-2 mb-3">
       <span class="text-xs font-medium text-neon-cyan bg-neon-cyan/10 px-2 py-1 rounded-full">{category}</span>

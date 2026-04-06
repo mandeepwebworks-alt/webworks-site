@@ -51,6 +51,19 @@ import { projects, categories } from '../data/portfolio';
       </a>
     </div>
 
+    <!-- Browser address bar -->
+    <div id="modal-addressbar" class="hidden items-center gap-2 px-4 py-2 bg-space-700/60 border-b border-white/[0.06] shrink-0">
+      <div class="flex items-center gap-1.5 shrink-0">
+        <span class="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-[#28C840]"></span>
+      </div>
+      <div class="flex-1 flex items-center gap-2 bg-space-900/60 rounded-lg px-3 py-1.5 min-w-0">
+        <svg class="w-3 h-3 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+        <span id="modal-address-url" class="text-xs font-mono text-muted-200 truncate"></span>
+      </div>
+    </div>
+
     <!-- Iframe area -->
     <div class="relative flex-1 min-h-0 bg-white">
       <!-- Loading spinner -->
@@ -95,8 +108,10 @@ import { projects, categories } from '../data/portfolio';
   const backBtn      = document.getElementById('modal-back')!;
   const modalCat     = document.getElementById('modal-category')!;
   const modalTitleBar = document.getElementById('modal-title-bar')!;
-  const modalOpenBtn = document.getElementById('modal-open-btn') as HTMLAnchorElement;
-  const modalIframe  = document.getElementById('modal-iframe') as HTMLIFrameElement;
+  const modalOpenBtn   = document.getElementById('modal-open-btn') as HTMLAnchorElement;
+  const modalAddressBar = document.getElementById('modal-addressbar')!;
+  const modalAddressUrl = document.getElementById('modal-address-url')!;
+  const modalIframe    = document.getElementById('modal-iframe') as HTMLIFrameElement;
   const modalLoader  = document.getElementById('modal-loader')!;
   const modalBlocked = document.getElementById('modal-blocked')!;
   const modalBlockedBtn = document.getElementById('modal-blocked-btn') as HTMLAnchorElement;
@@ -131,15 +146,20 @@ import { projects, categories } from '../data/portfolio';
     modalCat.textContent = data.category;
     modalTitleBar.textContent = data.title;
 
-    // Open-in-new-tab button (external sites only)
+    // Open-in-new-tab button + address bar (external sites only)
     if (data.isExternal && data.url) {
       modalOpenBtn.href = data.url;
       modalBlockedBtn.href = data.url;
       modalOpenBtn.classList.remove('hidden');
       modalOpenBtn.classList.add('inline-flex');
+      modalAddressUrl.textContent = data.url.replace(/^https?:\/\//, '');
+      modalAddressBar.classList.remove('hidden');
+      modalAddressBar.classList.add('flex');
     } else {
       modalOpenBtn.classList.add('hidden');
       modalOpenBtn.classList.remove('inline-flex');
+      modalAddressBar.classList.add('hidden');
+      modalAddressBar.classList.remove('flex');
     }
 
     // Load iframe (all sites — external and internal demos)
@@ -165,6 +185,8 @@ import { projects, categories } from '../data/portfolio';
     modalIframe.src = '';
     modalLoader.classList.remove('hidden');
     modalBlocked.classList.add('hidden');
+    modalAddressBar.classList.add('hidden');
+    modalAddressBar.classList.remove('flex');
   }
 
   modalIframe.addEventListener('load', onIframeLoad);
