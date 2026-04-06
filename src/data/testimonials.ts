@@ -8,7 +8,7 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: 'Raj P.',
+    name: 'Nadeem P.',
     business: 'Online Appraisal',
     location: 'Auckland, NZ',
     quote: 'SiteGenius built exactly what we needed — fast, clean, and professional. The platform has been running smoothly and our users love how easy it is. Couldn\'t be happier.',
