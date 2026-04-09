@@ -66,9 +66,43 @@ export default function QuoteForm() {
     setSubmitting(true);
     setStatus('idle');
 
+    const SUPABASE_URL = import.meta.env.PUBLIC_SUPABASE_URL as string;
+    const SUPABASE_KEY = import.meta.env.PUBLIC_SUPABASE_ANON_KEY as string;
+
     try {
       const formData = new FormData(event.currentTarget);
       formData.set('features', features.join(', '));
+
+      // Save lead to Supabase
+      if (SUPABASE_URL && SUPABASE_KEY) {
+        await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+          method: 'POST',
+          headers: {
+            apikey: SUPABASE_KEY,
+            Authorization: `Bearer ${SUPABASE_KEY}`,
+            'Content-Type': 'application/json',
+            Prefer: 'return=minimal',
+          },
+          body: JSON.stringify({
+            name: formState.name,
+            email: formState.email,
+            business: formState.business,
+            source: 'quote',
+            status: 'new',
+            data: {
+              project_type: formState.project_type,
+              pages: formState.pages,
+              features: features.join(', '),
+              existing_url: formState.existing_url,
+              budget: formState.budget,
+              timeline: formState.timeline,
+              additional: formState.additional,
+            },
+          }),
+        });
+      }
+
+      // Send email via Web3Forms
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
@@ -131,8 +165,9 @@ export default function QuoteForm() {
       )}
 
       <form onSubmit={submitForm} className="space-y-8">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
-        <input type="hidden" name="subject" value="New Quote Request from SiteGenius" />
+        <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3FORMS_KEY} />
+        <input type="hidden" name="subject" value="New Lead from SiteGenius — Quote Request" />
+        <input type="hidden" name="cc" value="mandeepwebworks@gmail.com" />
 
         {step === 1 && (
           <div className="space-y-6">

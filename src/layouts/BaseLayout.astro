@@ -50,6 +50,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <main class="flex-1 relative z-10"><slot /></main>
   <Footer />
   <script>
+    // Page view tracking
+    (async () => {
+      const url = (import.meta as any).env?.PUBLIC_SUPABASE_URL;
+      const key = (import.meta as any).env?.PUBLIC_SUPABASE_ANON_KEY;
+      if (!url || !key) return;
+      try {
+        await fetch(`${url}/rest/v1/page_views`, {
+          method: 'POST',
+          headers: { apikey: key, Authorization: `Bearer ${key}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          body: JSON.stringify({ page: window.location.pathname, referrer: document.referrer || null }),
+        });
+      } catch {}
+    })();
+  </script>
+  <script>
     // Scroll animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
