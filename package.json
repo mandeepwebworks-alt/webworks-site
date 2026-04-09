@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@astrojs/cloudflare": "^9.2.1",
     "@astrojs/react": "^3.6.3",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/tailwind": "^5.1.5",

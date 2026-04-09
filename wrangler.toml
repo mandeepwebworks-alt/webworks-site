@@ -1,0 +1,9 @@
+name = "sitegenius"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sitegenius-leads"
+database_id = "305a6d1a-60f0-4e67-927c-46648a5450e9"
