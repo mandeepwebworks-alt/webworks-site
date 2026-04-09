@@ -23,6 +23,8 @@ const featureOptions = [
 const initialState = {
   name: '',
   email: '',
+  phone: '',
+  location: '',
   business: '',
   project_type: '',
   pages: 'Not sure',
@@ -58,8 +60,19 @@ export default function QuoteForm() {
     );
   };
 
-  const goNext = () => setStep((current) => Math.min(4, current + 1));
-  const goBack = () => setStep((current) => Math.max(1, current - 1));
+  const [stepError, setStepError] = useState('');
+
+  const goNext = () => {
+    setStepError('');
+    if (step === 1) {
+      if (!formState.name.trim()) return setStepError('Please enter your name.');
+      if (!formState.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formState.email)) return setStepError('Please enter a valid email address.');
+      if (!formState.phone.trim()) return setStepError('Please enter your phone number.');
+      if (!formState.location.trim()) return setStepError('Please enter your suburb or city.');
+    }
+    setStep((current) => Math.min(4, current + 1));
+  };
+  const goBack = () => { setStepError(''); setStep((current) => Math.max(1, current - 1)); };
 
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -73,9 +86,11 @@ export default function QuoteForm() {
         body: JSON.stringify({
           name: formState.name,
           email: formState.email,
+          phone: formState.phone,
           business: formState.business,
           source: 'quote',
           leadData: {
+            location: formState.location,
             project_type: formState.project_type,
             pages: formState.pages,
             features: features.join(', '),
@@ -149,15 +164,22 @@ export default function QuoteForm() {
             <h2 className="text-2xl font-heading font-bold">Your <span className="gradient-text">Details</span></h2>
             <div className="grid gap-6 md:grid-cols-2">
               <Field label="Name *">
-                <input required name="name" value={formState.name} onChange={(e) => updateField('name', e.target.value)} className={inputClass} />
+                <input placeholder="John Smith" name="name" value={formState.name} onChange={(e) => updateField('name', e.target.value)} className={inputClass} />
+              </Field>
+              <Field label="Phone *">
+                <input type="tel" placeholder="021 123 4567" name="phone" value={formState.phone} onChange={(e) => updateField('phone', e.target.value)} className={inputClass} />
               </Field>
               <Field label="Email *">
-                <input required type="email" name="email" value={formState.email} onChange={(e) => updateField('email', e.target.value)} className={inputClass} />
+                <input type="email" placeholder="you@example.com" name="email" value={formState.email} onChange={(e) => updateField('email', e.target.value)} className={inputClass} />
+              </Field>
+              <Field label="Suburb / City *">
+                <input placeholder="Auckland, Wellington..." name="location" value={formState.location} onChange={(e) => updateField('location', e.target.value)} className={inputClass} />
               </Field>
               <Field label="Business Name">
                 <input name="business" value={formState.business} onChange={(e) => updateField('business', e.target.value)} className={inputClass} />
               </Field>
             </div>
+            {stepError && <p className="rounded-xl border border-rose-500/20 bg-rose-500/10 px-4 py-3 text-sm text-rose-300">{stepError}</p>}
           </div>
         )}
 
