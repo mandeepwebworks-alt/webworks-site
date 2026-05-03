@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Website Design Christchurch — Professional Custom Sites | SiteGenius"
+  description="Professional website design for Christchurch businesses from $499. One-off fee, custom-built, and SEO-optimised. Helping Canterbury businesses grow online."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Website Design Christchurch</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Website Design <span class="gradient-text">Christchurch</span> — Built for Canterbury Businesses
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Christchurch businesses are growing fast. Make sure your online presence keeps up. SiteGenius builds professional, fast, custom websites from $499 — one-off fee, no agency markup, no lock-in.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Christchurch is one of New Zealand's fastest-growing cities. With a booming construction sector, thriving hospitality scene, and growing tech industry — competition for customers online is real. A slow, generic website isn't just a missed opportunity. It's costing you jobs.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Christchurch & Canterbury Areas We Serve</h2>
+        <p class="text-muted-200 mb-6">We work fully remotely. If you're ever visiting Auckland or Melbourne, we're happy to meet in person too.</p>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {[
+            'Christchurch CBD', 'Riccarton', 'Addington', 'Sydenham', 'Spreydon', 'Hillmorton', 'Hornby', 'Wigram',
+            'Papanui', 'Merivale', 'St Albans', 'Shirley', 'Mairehau', 'Parklands', 'New Brighton', 'Sumner', 'Lyttelton',
+            'Halswell', 'Cashmere', 'Westmorland', 'Prebbleton', 'Lincoln', 'Rolleston', 'Templeton',
+            'Rangiora', 'Kaiapoi', 'Pegasus', 'Waimakariri',
+            'Ashburton', 'Timaru', 'Geraldine', 'Methven',
+          ].map(suburb => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{suburb}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Industries We Serve in Christchurch</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Construction & Trades</strong> — Builders, plumbers, electricians, roofers, landscapers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Agriculture & Rural</strong> — Farm suppliers, rural services, agricultural equipment</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Automotive</strong> — Car dealers, mechanics, WOF stations, panel beaters</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Hospitality & Tourism</strong> — Cafes, restaurants, motels, tour operators, adventure activities</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Professional Services</strong> — Accountants, lawyers, financial advisers, consultants</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Health & Wellness</strong> — Physios, chiropractors, gyms, beauty salons, clinics</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What We Build for Christchurch Businesses</h2>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            'Custom design — unique to your brand',
+            'Mobile-first and fully responsive',
+            'Fast loading — under 2 seconds',
+            'Local SEO for Canterbury suburbs',
+            'Google Business Profile setup',
+            'Contact forms and lead capture',
+            'SSL and fast NZ hosting',
+            'Ongoing support and updates',
+            'One-off fee — no monthly lock-in',
+            'No lock-in contracts',
+          ].map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Website Design Pricing for Christchurch Businesses</h2>
+        <p class="text-muted-200 mb-6">
+          Traditional Christchurch web design agencies charge $5,000–$15,000. SiteGenius delivers the same quality for a fraction of that — one-off fee, your website owned outright.
+        </p>
+        <div class="grid sm:grid-cols-3 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$499', desc: '1-page site. One-off fee, yours forever.' },
+            { plan: 'Essential', price: '$1,499', desc: '3–4 pages, CMS, full SEO setup. One-off fee.' },
+            { plan: 'Professional', price: '$2,499', desc: '5–7 pages, blog, advanced SEO. One-off fee.' },
+          ].map(p => (
+            <div class="glass rounded-xl p-6">
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-3">{p.price}</p>
+              <p class="text-sm text-muted-300 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Can we meet in person?', a: 'All our work is done 100% remotely — but if you\'re ever in Auckland or Melbourne, we\'d love to catch up in person. For Christchurch clients, a quick video call is the perfect way to get started.' },
+            { q: 'How quickly can you build a website?', a: 'Most Christchurch projects are live in 7–14 days. We move fast without cutting corners.' },
+            { q: 'Will my site rank in Christchurch Google searches?', a: 'Yes. Every site we build includes local SEO setup targeting your Canterbury suburb and industry. We also assist with your Google Business Profile to boost local visibility.' },
+            { q: 'Can I update my website content myself?', a: 'Yes. We build on platforms with easy content management. Or let our team handle updates — that\'s included in your plan.' },
+            { q: 'Do you also work with South Island businesses outside Christchurch?', a: 'Absolutely. We serve businesses across Canterbury, the South Island, and all of New Zealand. Remote-first means geography doesn\'t matter.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Let's grow your Christchurch business online."
+    description="Free quote — no obligation, no pressure."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

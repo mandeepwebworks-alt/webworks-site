@@ -1,0 +1,180 @@
+---
+const pages = [
+  { label: '1', display: '1 page', price: 499 },
+  { label: '2', display: '2 pages', price: 699 },
+  { label: '3', display: '3 pages', price: 999 },
+  { label: '4', display: '4 pages', price: 1299 },
+  { label: '5', display: '5 pages', price: 1499 },
+  { label: '6', display: '6 pages', price: 1699 },
+  { label: '7', display: '7 pages', price: 1999 },
+  { label: '8', display: '8 pages', price: 2499 },
+  { label: '9', display: '9 pages', price: 2499 },
+  { label: '10+', display: '10+ pages', price: 0, custom: true },
+];
+
+const addons = [
+  { id: 'blog', label: 'Blog / News Section', price: 299, desc: 'Publish updates & articles with ease' },
+  { id: 'ecommerce', label: 'Online Store', price: 599, desc: 'Sell products or services online' },
+  { id: 'booking', label: 'Booking System', price: 399, desc: 'Accept appointments & bookings' },
+  { id: 'seo', label: 'Advanced SEO', price: 199, desc: 'Schema markup, local SEO & reports' },
+  { id: 'gbp', label: 'Google Business Setup', price: 99, desc: 'Get found on Google Maps' },
+  { id: 'logo', label: 'Logo Design', price: 299, desc: 'Professional brand identity' },
+  { id: 'copy', label: 'Copywriting', price: 149, desc: 'Expert copy, per page' },
+];
+---
+
+<section class="section-padding bg-space-800/30">
+  <div class="container-custom">
+    <div class="mb-12 animate-on-scroll">
+      <p class="section-label">Build Your Package</p>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl max-w-xl">
+          Custom quote<span class="text-neon-cyan">.</span> <span class="gradient-text">Instant estimate</span>
+        </h2>
+        <p class="text-muted-200 max-w-sm">Pick your pages and add-ons — see your one-off price right away.</p>
+      </div>
+    </div>
+
+    <div class="glass rounded-2xl p-8 md:p-12 max-w-4xl mx-auto animate-on-scroll">
+
+      <!-- Page count -->
+      <div class="mb-10">
+        <h3 class="text-base font-heading font-semibold text-muted-100 mb-1">How many pages do you need?</h3>
+        <p class="text-sm text-muted-300 mb-5">A "page" is a unique screen — Home, About, Services, Contact, etc.</p>
+        <div class="flex flex-wrap gap-2.5" id="calc-page-selector">
+          {pages.map((p, i) => (
+            <button
+              type="button"
+              class={`calc-page-btn text-sm font-heading font-semibold px-4 py-2.5 rounded-xl border transition-all duration-200 ${i === 0 ? 'is-active' : ''}`}
+              data-index={i}
+              data-price={p.price}
+              data-custom={p.custom ? 'true' : 'false'}
+            >
+              {p.display}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Add-ons -->
+      <div class="mb-10">
+        <h3 class="text-base font-heading font-semibold text-muted-100 mb-1">Add-ons <span class="text-muted-400 font-normal">(optional)</span></h3>
+        <p class="text-sm text-muted-300 mb-5">Select any extras you'd like included in your build.</p>
+        <div class="grid sm:grid-cols-2 gap-3" id="calc-addons">
+          {addons.map((addon) => (
+            <label class="calc-addon-label flex items-start gap-3 p-4 rounded-xl cursor-pointer transition-all duration-200">
+              <input
+                type="checkbox"
+                class="calc-addon-cb mt-0.5 w-4 h-4 flex-shrink-0 cursor-pointer"
+                data-price={addon.price}
+                data-id={addon.id}
+              />
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-sm font-heading font-semibold text-muted-100">{addon.label}</span>
+                  <span class="text-sm font-heading font-semibold text-neon-cyan flex-shrink-0">+${addon.price}</span>
+                </div>
+                <p class="text-xs text-muted-300 mt-0.5">{addon.desc}</p>
+              </div>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <!-- Total + CTA -->
+      <div class="border-t border-white/[0.08] pt-8 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+        <div>
+          <p class="text-sm text-muted-300 mb-1">Estimated one-off investment</p>
+          <div class="flex items-baseline gap-2">
+            <span class="text-5xl font-heading font-bold text-muted-100" id="calc-total">$499</span>
+            <span class="text-muted-300 text-sm" id="calc-gst">+ GST</span>
+          </div>
+          <p class="text-xs text-muted-400 mt-2">Hosting from $25/mo extra. Final quote confirmed after discovery call.</p>
+        </div>
+        <a href="/get-a-quote" class="btn-primary whitespace-nowrap flex-shrink-0">Get a Free Quote</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .calc-page-btn {
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgb(163, 175, 191);
+    background: transparent;
+  }
+  .calc-page-btn:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgb(224, 231, 240);
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .calc-page-btn.is-active {
+    border-color: rgb(0, 229, 255);
+    background: rgba(0, 229, 255, 0.1);
+    color: rgb(0, 229, 255);
+  }
+  .calc-addon-label {
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+  }
+  .calc-addon-label:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .calc-addon-label.is-checked {
+    border-color: rgba(0, 229, 255, 0.3);
+    background: rgba(0, 229, 255, 0.04);
+  }
+  .calc-addon-cb {
+    accent-color: rgb(0, 229, 255);
+  }
+</style>
+
+<script>
+  let selectedIndex = 0;
+
+  const pagePrices = [499, 699, 999, 1299, 1499, 1699, 1999, 2499, 2499, 0];
+  const isCustomPage = [false, false, false, false, false, false, false, false, false, true];
+
+  function updateTotal() {
+    const custom = isCustomPage[selectedIndex];
+    const totalEl = document.getElementById('calc-total');
+    const gstEl = document.getElementById('calc-gst');
+    if (!totalEl || !gstEl) return;
+
+    if (custom) {
+      totalEl.textContent = 'Custom';
+      gstEl.textContent = '';
+      return;
+    }
+
+    let total = pagePrices[selectedIndex];
+    document.querySelectorAll<HTMLInputElement>('.calc-addon-cb:checked').forEach(cb => {
+      total += parseInt(cb.dataset.price ?? '0', 10);
+    });
+
+    totalEl.textContent = '$' + total.toLocaleString();
+    gstEl.textContent = '+ GST';
+  }
+
+  // Page buttons
+  document.getElementById('calc-page-selector')?.addEventListener('click', (e) => {
+    const btn = (e.target as Element).closest<HTMLButtonElement>('.calc-page-btn');
+    if (!btn) return;
+    selectedIndex = parseInt(btn.dataset.index ?? '0', 10);
+    document.querySelectorAll('.calc-page-btn').forEach((b, i) => {
+      b.classList.toggle('is-active', i === selectedIndex);
+    });
+    updateTotal();
+  });
+
+  // Add-on checkboxes
+  document.getElementById('calc-addons')?.addEventListener('change', (e) => {
+    const cb = (e.target as Element).closest<HTMLInputElement>('.calc-addon-cb');
+    if (!cb) return;
+    const label = cb.closest('.calc-addon-label');
+    if (label) label.classList.toggle('is-checked', cb.checked);
+    updateTotal();
+  });
+</script>

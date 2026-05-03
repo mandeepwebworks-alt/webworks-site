@@ -10,71 +10,12 @@ export interface PricingPlan {
   ctaLink: string;
 }
 
-export const subscriptionPlans: PricingPlan[] = [
-  {
-    name: 'Basic',
-    price: '$79',
-    period: '/month',
-    description: 'Get online with a professional 3-page site.',
-    features: [
-      '3-page website',
-      'Mobile-responsive design',
-      'Contact form',
-      'Basic SEO',
-      'Hosting included',
-      'SSL certificate',
-      '1 content edit per month',
-      'Email support',
-    ],
-    badge: '12-month minimum',
-    cta: 'Get Started',
-    ctaLink: '/get-a-quote',
-  },
-  {
-    name: 'Growth',
-    price: '$149',
-    period: '/month',
-    description: 'The full package for growing businesses.',
-    features: [
-      '5-page website',
-      'Custom responsive design',
-      'Blog / news section',
-      'Full SEO setup',
-      'Google Business setup',
-      'Hosting included',
-      'SSL certificate',
-      '2 content edits per month',
-      'Priority support',
-    ],
-    popular: true,
-    badge: '12-month minimum',
-    cta: 'Get Started',
-    ctaLink: '/get-a-quote',
-  },
-  {
-    name: 'Premium',
-    price: '$249',
-    period: '/month',
-    description: 'Custom design with all the extras.',
-    features: [
-      'Custom design (up to 7 pages)',
-      'Everything in Growth',
-      'E-commerce basics',
-      'Monthly performance reports',
-      'Priority phone support',
-      'Unlimited minor edits',
-    ],
-    badge: '12-month minimum',
-    cta: 'Get Started',
-    ctaLink: '/get-a-quote',
-  },
-];
-
 export const websitePackages: PricingPlan[] = [
   {
     name: 'Starter',
     price: '$499',
-    description: 'Quick one-page site to get you online.',
+    badge: 'One-off fee',
+    description: 'A clean, professional single-page site to get you online fast.',
     features: [
       '1-page responsive website',
       'Mobile-friendly design',
@@ -90,7 +31,8 @@ export const websitePackages: PricingPlan[] = [
   {
     name: 'Essential',
     price: '$1,499',
-    description: 'Full small business website.',
+    badge: 'One-off fee',
+    description: 'A full small business website — yours to keep, forever.',
     features: [
       '3–4 page website',
       'Custom responsive design',
@@ -109,7 +51,8 @@ export const websitePackages: PricingPlan[] = [
   {
     name: 'Professional',
     price: '$2,499',
-    description: 'Bigger site with advanced features.',
+    badge: 'One-off fee',
+    description: 'A larger site with advanced features — built to grow with you.',
     features: [
       '5–7 page website',
       'Everything in Essential',

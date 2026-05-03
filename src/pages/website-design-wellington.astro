@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Website Design Wellington — Professional Custom Sites | SiteGenius"
+  description="Professional website design for Wellington businesses from $499. One-off fee, custom websites that rank on Google and win customers. No lock-in."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Website Design Wellington</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Website Design <span class="gradient-text">Wellington</span> — Sites That Work As Hard As You Do
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Wellington businesses need websites that are sharp, fast, and visible on Google. SiteGenius delivers exactly that — professional custom websites from $499, one-off fee.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Wellington is home to a diverse, digitally sophisticated business community. Whether you're in the CBD, Petone, Porirua, or the Hutt Valley — your customers are online, and they're making decisions based on what they see. We make sure what they see is impressive.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Wellington Areas We Serve</h2>
+        <p class="text-muted-200 mb-6">All work is done remotely — but we can always meet in Auckland or Melbourne if needed.</p>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {[
+            'Wellington CBD', 'Te Aro', 'Thorndon', 'Lambton Quay', 'Newtown', 'Island Bay', 'Berhampore', 'Mt Victoria',
+            'Karori', 'Khandallah', 'Ngaio', 'Crofton Downs', 'Johnsonville', 'Newlands', 'Churton Park', 'Tawa',
+            'Petone', 'Eastbourne', 'Lower Hutt', 'Upper Hutt', 'Wainuiomata',
+            'Porirua', 'Titahi Bay', 'Plimmerton', 'Paremata',
+            'Kapiti Coast', 'Paraparaumu', 'Waikanae', 'Levin',
+            'Miramar', 'Strathmore', 'Seatoun', 'Breaker Bay',
+          ].map(suburb => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{suburb}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Industries We Design For in Wellington</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Government & Consulting</strong> — Wellington's hub for policy, consulting, and professional services</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Trades & Services</strong> — Plumbers, builders, electricians, cleaners, landscapers across Greater Wellington</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Hospitality</strong> — Cafes, restaurants, bars, caterers in a city that loves to eat out</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Creative & Tech</strong> — Agencies, studios, SaaS companies, and freelancers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Health & Wellness</strong> — Physios, gyms, natural health practitioners, clinics</span></li>
+          <li class="flex items-start gap-3"><span class="text-muted-100">→</span><span><strong class="text-muted-100">Retail & E-commerce</strong> — Local shops and product brands needing an online presence</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What's Included in Every Wellington Website</h2>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            'Custom design — tailored to your brand',
+            'Mobile-first and fully responsive',
+            'Fast loading — under 2 seconds',
+            'Local SEO for Wellington suburbs',
+            'Google Business Profile setup',
+            'Contact forms and lead capture',
+            'SSL certificate included',
+            'NZ hosting with global CDN',
+            'Ongoing updates and support',
+            'No lock-in contracts',
+          ].map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">How Much Does Website Design Cost in Wellington?</h2>
+        <p class="text-muted-200 mb-6">
+          Wellington web design agencies typically charge $3,000–$15,000 for a basic business website. SiteGenius delivers the same quality for a fraction of that — one-off fee, your website owned outright.
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Starter — $499</strong>: 1-page site. One-off fee, yours forever.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Essential — $1,499</strong>: 3–4 pages, CMS, full SEO. One-off fee.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Professional — $2,499</strong>: 5–7 pages, blog, advanced SEO. One-off fee.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Custom — Get a Quote</strong>: E-commerce, bookings, custom integrations. Fixed price.</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Can we meet in person?', a: 'All our work is done 100% remotely — video calls, shared docs, and a simple review process. However, if you\'re ever in Auckland or Melbourne, we\'re happy to meet in person. Wellington clients are always welcome to connect via video call first.' },
+            { q: 'How long does a website take to build?', a: 'Most Wellington projects are live in 7–14 days. Larger builds with custom features may take 3–4 weeks.' },
+            { q: 'Will my site rank in Wellington Google searches?', a: 'Yes. Every site includes local SEO setup targeting your suburb and industry keywords. We also help with Google Business Profile for local visibility.' },
+            { q: 'Can you improve my existing Wellington website?', a: 'Absolutely. We assess your current site and recommend improvements — or rebuild it from scratch if it\'s past saving.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Let's get your Wellington business online properly."
+    description="Free quote — no obligation, no hard sell."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

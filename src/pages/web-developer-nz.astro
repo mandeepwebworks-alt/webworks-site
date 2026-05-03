@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Web Developer New Zealand — Custom Website Development | SiteGenius"
+  description="Professional web developer based in NZ. SiteGenius builds custom websites and web applications for businesses across New Zealand. Fast, modern, affordable."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">NZ Web Development</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Web Developer <span class="gradient-text">New Zealand</span> — Custom Builds, Real Results
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Looking for a web developer in New Zealand? SiteGenius builds fast, modern websites and web applications for businesses across Auckland, Wellington, Christchurch, and beyond.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Start Your Project</a>
+          <a href="/portfolio" class="btn-secondary">View Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            There's no shortage of web developers in New Zealand — but finding one who understands your business, communicates clearly, and delivers on time is a different story. At SiteGenius, we've built websites for businesses across NZ and internationally, and we do it faster and more affordably than most agencies.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What Does a Web Developer in NZ Actually Do?</h2>
+        <p class="text-muted-200 mb-6">
+          A web developer turns your business goals into a functional, good-looking website. Unlike web designers who focus purely on how things look, developers ensure everything works — fast loading, secure, mobile-friendly, and integrated with your tools.
+        </p>
+        <p class="text-muted-200 mb-6">
+          The best web developers in NZ do both — design and build — which is exactly how we operate at SiteGenius.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Our Tech Stack</h2>
+        <p class="text-muted-200 mb-6">We use modern, proven technologies that give your site speed, security, and scalability:</p>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            'Astro — lightning-fast static sites',
+            'React — interactive web applications',
+            'Tailwind CSS — clean, responsive design',
+            'Cloudflare — global hosting & security',
+            'Shopify — e-commerce stores',
+            'WordPress — content management',
+            'Supabase / D1 — databases & backends',
+            'AI-assisted development — faster builds',
+          ].map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Web Development Services We Offer in NZ</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Business websites</strong> — Brochure sites, service pages, contact forms, lead capture</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">E-commerce stores</strong> — Online shops with payment integration, product management</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Landing pages</strong> — High-converting single pages for campaigns or lead generation</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Web applications</strong> — Custom tools, calculators, dashboards, booking systems</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Website redesigns</strong> — Modernising old sites that look outdated or load slowly</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Ongoing maintenance</strong> — Updates, security, new features, hosting management</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">How We're Different From Other NZ Web Developers</h2>
+        <p class="text-muted-200 mb-6">
+          Most web developers in New Zealand either work solo (limited capacity, slow turnaround) or inside agencies (expensive, impersonal). SiteGenius sits in the middle — a skilled team with the efficiency of a specialist studio and the personal service of a solo developer.
+        </p>
+        <p class="text-muted-200 mb-6">
+          Our founder has worked across real estate, automotive, and sales — which means we understand how your customers think and what makes them take action on a website.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Cities We Serve Across New Zealand</h2>
+        <p class="text-muted-200 mb-6">
+          While we're based in NZ, our process is fully remote-friendly. We work with businesses in:
+        </p>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {['Auckland', 'Wellington', 'Christchurch', 'Hamilton', 'Tauranga', 'Dunedin', 'Palmerston North', 'Napier', 'Nelson', 'Rotorua', 'New Plymouth', 'Invercargill'].map(city => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{city}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'How much does web development cost in New Zealand?', a: 'Costs vary widely — from $500 for a basic site to $15,000+ for complex builds. At SiteGenius, our one-off packages start from $499, with a fixed price agreed before any work begins.' },
+            { q: 'How long does it take to build a website?', a: 'Most projects are delivered in 7–14 days. Complex builds with custom functionality may take 3–6 weeks.' },
+            { q: 'Do I need to meet you in person?', a: 'Not at all. Our entire process works remotely. We use video calls, shared docs, and simple review tools to keep everything smooth.' },
+            { q: 'Can you help with SEO as well?', a: 'Yes. Every site we build is SEO-ready from day one. We also offer local SEO services to help you rank for searches in your city or region.' },
+            { q: 'What if I already have a website and want it improved?', a: 'We do redesigns and improvements regularly. Send us your current site and we\'ll give you an honest assessment of what can be better.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Let's build something great"
+    description="Tell us about your project — we'll get back to you within 24 hours."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

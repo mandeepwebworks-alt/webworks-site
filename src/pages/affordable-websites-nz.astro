@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Affordable Website Design NZ — Professional Sites From $499 | SiteGenius"
+  description="Affordable website design in New Zealand. Professional one-off websites from $499. No monthly fees, no hidden costs. Built for NZ small businesses."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Affordable Web Design NZ</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Affordable Website Design <span class="gradient-text">New Zealand</span> — Professional Sites, Fair Prices
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          You shouldn't have to pay agency prices to get a professional website. SiteGenius delivers fast, custom-designed websites for NZ businesses from just $499 — one-off fee, no monthly lock-in, no surprises.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/pricing" class="btn-secondary">See Pricing</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            The average web design agency in New Zealand charges between $3,000 and $15,000 for a basic business website. For most small businesses, that's simply not realistic — especially when you're just starting out or trying to keep overheads low. There's a better way.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What Does "Affordable" Actually Mean?</h2>
+        <p class="text-muted-200 mb-6">
+          Affordable doesn't mean cheap-looking or cut corners. It means transparent pricing, no unnecessary agency overhead, and using modern technology efficiently to deliver more value at a lower cost.
+        </p>
+        <p class="text-muted-200 mb-6">
+          At SiteGenius, we use AI-assisted tools and a lean team structure to build professional websites faster than traditional agencies — and we pass those savings directly to you.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Our Pricing — Simple and Transparent</h2>
+        <div class="grid sm:grid-cols-2 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$499', desc: 'A clean 1-page site — perfect for sole traders getting online fast. One-off fee, yours forever.' },
+            { plan: 'Essential', price: '$1,499', desc: '3–4 page small business website. Custom design, CMS, SEO setup, and contact forms. One-off fee.' },
+            { plan: 'Professional', price: '$2,499', desc: '5–7 page site with blog, advanced SEO, and performance optimisation. One-off fee.' },
+            { plan: 'Custom', price: 'Get a Quote', desc: 'E-commerce, bookings, or something unique? We\'ll give you a fixed price upfront.' },
+          ].map(p => (
+            <div class="glass rounded-xl p-6">
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-3">{p.price}</p>
+              <p class="text-sm text-muted-300 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What's Included in Every Website</h2>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            'Custom design — not a template',
+            'Mobile-friendly & responsive',
+            'Fast loading — under 2 seconds',
+            'SSL certificate (secure site)',
+            'NZ-based hosting included',
+            'Contact form & lead capture',
+            'SEO basics configured',
+            'Google Analytics setup',
+            '24hr support response',
+            'Unlimited content updates',
+          ].map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Why NZ Businesses Choose Us Over Cheap Website Builders</h2>
+        <p class="text-muted-200 mb-6">
+          Wix, Squarespace, and other DIY builders seem affordable — until you factor in your time, the limitations they impose, and the generic look that makes your business blend in with thousands of others.
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Custom design</strong> — your site looks like you, not a template</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Built to rank on Google</strong> — DIY builders often have poor SEO performance</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">No hidden fees</strong> — you get a fixed price upfront, nothing more</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Someone who cares</strong> — you get a real team, not a help desk chatbot</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Is there a setup fee?', a: 'No setup fees, ever. We quote a fixed one-off price and that\'s what you pay — nothing more.' },
+            { q: 'Do I own my website?', a: 'Yes, 100%. Once it\'s built and paid for, it\'s yours outright. We\'ll hand over everything.' },
+            { q: 'How fast will my site be live?', a: 'Most projects go live within 7–14 days from when we receive your content and approval.' },
+            { q: 'Do you work with businesses across all of NZ?', a: 'Yes — we work 100% remotely and serve clients in Auckland, Wellington, Christchurch, and everywhere in between.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Get a professional website without the agency price tag"
+    description="Free quote. No obligation. No hard sell."
+    href="/get-a-quote"
+    label="Get Your Free Quote"
+  />
+</BaseLayout>

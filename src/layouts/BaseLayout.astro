@@ -4,7 +4,7 @@ import Footer from '../components/layout/Footer.astro';
 import '../styles/global.css';
 
 interface Props { title: string; description?: string; }
-const { title, description = "Professional web design for New Zealand businesses. Fast, affordable websites from $79/month." } = Astro.props;
+const { title, description = "Professional web design for New Zealand businesses. Fast, affordable one-off websites from $499." } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -35,6 +35,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-M45BGZCC');</script>
   <!-- End Google Tag Manager -->
+  <!-- Google Ads Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18062666477"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18062666477');
+  </script>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -127,5 +135,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       });
     }
   </script>
+  <script src="https://app.smartwebworks.com.au/widget.js" data-workspace="site-genius" data-label="Chat with us" defer></script>
+  <style is:global>
+    #ai-brain-widget-site-genius-button {
+      background: linear-gradient(135deg, #00e5ff, #a855f7) !important;
+      box-shadow: 0 8px 32px rgba(0, 229, 255, 0.35) !important;
+      color: #0e1628 !important;
+      font-weight: 700 !important;
+      font-family: 'Outfit', sans-serif !important;
+      letter-spacing: 0.01em !important;
+    }
+    #ai-brain-widget-site-genius-button:hover {
+      box-shadow: 0 8px 40px rgba(0, 229, 255, 0.55) !important;
+      transform: translateY(-1px) !important;
+    }
+  </style>
 </body>
 </html>

@@ -1,7 +1,7 @@
 ---
 import PricingCard from '../ui/PricingCard.astro';
 import Button from '../ui/Button.astro';
-import { subscriptionPlans } from '../../data/pricing';
+import { websitePackages } from '../../data/pricing';
 ---
 <section class="section-padding">
   <div class="container-custom">
@@ -9,20 +9,20 @@ import { subscriptionPlans } from '../../data/pricing';
       <p class="section-label">Pricing</p>
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <h2 class="text-4xl md:text-5xl lg:text-6xl max-w-lg">
-          Transparent pricing<span class="text-neon-cyan">.</span> <span class="gradient-text">No surprises</span>
+          Transparent pricing<span class="text-neon-cyan">.</span> <span class="gradient-text">One-off fee</span>
         </h2>
-        <p class="text-muted-200 max-w-sm">Monthly plans or one-time builds. Whatever works for your business and budget.</p>
+        <p class="text-muted-200 max-w-sm">Pay once, own your website forever. No monthly lock-in, no surprises.</p>
       </div>
     </div>
     <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-3 stagger-children">
-      {subscriptionPlans.map((plan) => (
+      {websitePackages.map((plan) => (
         <div class="animate-on-scroll">
           <PricingCard {...plan} features={plan.features.slice(0, 4)} />
         </div>
       ))}
     </div>
     <div class="mt-10 text-center animate-on-scroll">
-      <p class="mb-5 text-sm text-muted-300">12-month minimum. Prices excl. GST.</p>
+      <p class="mb-5 text-sm text-muted-300">All prices excl. GST. Hosting from $25/mo extra.</p>
       <Button href="/pricing" variant="secondary">See All Pricing Options</Button>
     </div>
   </div>

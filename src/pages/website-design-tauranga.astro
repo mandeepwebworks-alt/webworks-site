@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Website Design Tauranga — Professional Custom Sites | SiteGenius"
+  description="Professional website design for Tauranga & Bay of Plenty businesses from $499. One-off fee, custom-built, SEO-optimised. Get found on Google in Tauranga."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Website Design Tauranga</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Website Design <span class="gradient-text">Tauranga</span> — For Bay of Plenty Businesses
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Tauranga is one of New Zealand's fastest-growing cities. SiteGenius builds professional, fast, custom websites for Bay of Plenty businesses — one-off fee from $499 with no lock-in.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Tauranga has one of the highest business growth rates in New Zealand. With a booming port economy, strong construction sector, and a thriving tourism and hospitality scene — competition online is fierce. A professional website is no longer optional.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Tauranga & Bay of Plenty Areas We Serve</h2>
+        <p class="text-muted-200 mb-6">We work fully remotely. If you're in Auckland or Melbourne, we're also happy to meet in person.</p>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {[
+            'Tauranga CBD', 'Mount Maunganui', 'Papamoa', 'Papamoa East', 'Welcome Bay', 'Greerton', 'Gate Pā',
+            'Bethlehem', 'Tauriko', 'Pyes Pā', 'Ohauiti', 'Hairini', 'Brookfield',
+            'Omokoroa', 'Katikati', 'Waihi Beach', 'Athenree',
+            'Te Puke', 'Maketu', 'Pāpāmoa',
+            'Whakatāne', 'Ōhope', 'Kawerau', 'Ōpōtiki',
+            'Rotorua', 'Ngongotahā', 'Hamurana',
+            'Taupō', 'Turangi',
+          ].map(s => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{s}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Industries We Serve in Tauranga</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Tourism & Hospitality</strong> — Accommodation, cafes, tour operators, adventure activities</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Trades & Construction</strong> — Builders, plumbers, electricians, painters, landscapers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Real Estate & Property</strong> — Agents, property managers, developers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Health & Wellness</strong> — Clinics, gyms, personal trainers, beauty and wellness studios</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Professional Services</strong> — Accountants, mortgage brokers, lawyers, consultants</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Retail & E-commerce</strong> — Local shops and product brands</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Pricing for Tauranga Businesses</h2>
+        <div class="grid sm:grid-cols-3 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$499', desc: '1-page site. One-off fee, yours forever.' },
+            { plan: 'Essential', price: '$1,499', desc: '3–4 pages, CMS, SEO setup. One-off fee.' },
+            { plan: 'Professional', price: '$2,499', desc: '5–7 pages, blog, advanced SEO. One-off fee.' },
+          ].map(p => (
+            <div class="glass rounded-xl p-6">
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-3">{p.price}</p>
+              <p class="text-sm text-muted-300">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Can we meet in person?', a: 'Everything runs 100% remotely — video calls and a simple review process. If you\'re ever up in Auckland, we\'re happy to meet in person there. Otherwise a video call is the fastest way to get your project started.' },
+            { q: 'How quickly can you build a website?', a: 'Most Tauranga projects are live in 7–14 days from when we have your content and details.' },
+            { q: 'Will my site rank in Tauranga Google searches?', a: 'Yes. Every site includes local SEO targeting Tauranga suburbs and your industry. We also help with Google Business Profile.' },
+            { q: 'Can you redesign my existing website?', a: 'Absolutely. We assess your current site and recommend improvements — or rebuild it from scratch if needed.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Let's grow your Tauranga business online."
+    description="Free quote — no obligation, no pressure."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

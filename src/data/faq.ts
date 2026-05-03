@@ -22,11 +22,7 @@ export const faqs: FAQ[] = [
   },
   {
     question: 'What if I need changes after launch?',
-    answer: 'Small tweaks? No worries. For ongoing updates, our Website Care Plans cover regular changes from just $49/month.',
-  },
-  {
-    question: 'What\'s included in the monthly subscription plans?',
-    answer: 'Everything — website design, hosting, email, updates, and support — all for one predictable monthly payment. No large upfront cost.',
+    answer: 'Small tweaks are covered in your package. For ongoing changes and maintenance, our Website Care Plans have you covered — ask us about options.',
   },
   {
     question: 'Are prices GST inclusive?',
@@ -35,9 +31,5 @@ export const faqs: FAQ[] = [
   {
     question: 'Do you work with automotive businesses?',
     answer: 'Yes! We have a background in the automotive industry, so we understand mechanics, panel beaters, car dealerships, and auto parts businesses.',
-  },
-  {
-    question: 'What happens after the 12-month subscription?',
-    answer: 'After 12 months, your plan continues month-to-month. You can cancel anytime with 30 days notice. Your website stays yours.',
   },
 ];

@@ -2,59 +2,63 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PricingCard from '../components/ui/PricingCard.astro';
 import FAQItem from '../components/ui/FAQItem.astro';
-import { subscriptionPlans, websitePackages } from '../data/pricing';
+import CustomPricingCalculator from '../components/sections/CustomPricingCalculator.astro';
+import { websitePackages } from '../data/pricing';
 import { faqs } from '../data/faq';
 ---
-<BaseLayout title="Pricing — SiteGenius" description="Simple, honest pricing for NZ web design. Monthly plans from $79/mo or one-time from $499.">
+<BaseLayout title="Pricing — WebWorks" description="Simple, honest one-off pricing for NZ web design. Pay once, own your website forever. Packages from $499.">
+
+  <!-- Hero -->
   <section class="pt-32 pb-16 grid-bg">
     <div class="container-custom">
-      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">Simple, Honest <span class="gradient-text">Pricing</span></h1>
-      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">No hidden fees. No lock-in surprises. Just great websites.</p>
+      <p class="section-label animate-slide-up">Pricing</p>
+      <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4 animate-slide-up">
+        One-off fee<span class="text-neon-cyan">.</span> <span class="gradient-text">Yours forever</span>
+      </h1>
+      <p class="text-xl text-muted-200 max-w-2xl animate-slide-up" style="animation-delay:0.1s">
+        Pay once, own your website outright. No monthly lock-in, no surprises — just a great website built for your business.
+      </p>
     </div>
   </section>
 
-  <!-- Monthly Subscriptions -->
+  <!-- Package cards -->
   <section class="section-padding">
     <div class="container-custom">
       <div class="text-center mb-12 animate-on-scroll">
-        <div class="inline-flex items-center gap-2 bg-gradient-to-r from-neon-cyan/10 to-neon-purple/10 border border-neon-cyan/20 rounded-full px-4 py-1.5 mb-4">
-          <span class="text-sm font-heading font-semibold gradient-text">Recommended</span>
-        </div>
-        <h2 class="text-3xl font-heading font-bold mb-4">Monthly <span class="gradient-text">Plans</span></h2>
-        <p class="text-muted-200 max-w-2xl mx-auto">No big upfront cost. Everything included. Cancel after 12 months anytime.</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {subscriptionPlans.map((plan) => (
-          <div class="animate-on-scroll"><PricingCard {...plan} /></div>
-        ))}
-      </div>
-      <p class="text-center text-sm text-muted-300 mt-8 animate-on-scroll">All plans include hosting, SSL, and domain setup. 12-month minimum term, then month-to-month. Prices exclude GST.</p>
-    </div>
-  </section>
-
-  <!-- One-Time -->
-  <section class="section-padding bg-space-800/50">
-    <div class="container-custom">
-      <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl font-heading font-bold mb-4">Prefer to <span class="gradient-text">Pay Upfront?</span></h2>
-        <p class="text-muted-200 max-w-2xl mx-auto">One-time fee, your website forever. Hosting and maintenance charged separately.</p>
+        <h2 class="text-3xl font-heading font-bold mb-4">Website <span class="gradient-text">Packages</span></h2>
+        <p class="text-muted-200 max-w-2xl mx-auto">Fixed one-off prices. Everything below is included in your build — no hidden extras.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {websitePackages.map((plan) => (
           <div class="animate-on-scroll"><PricingCard {...plan} /></div>
         ))}
       </div>
-      <p class="text-center text-sm text-muted-300 mt-8 animate-on-scroll">Prices exclude GST. Hosting from $25/month extra.</p>
+      <p class="text-center text-sm text-muted-300 mt-8 animate-on-scroll">All prices excl. GST. Hosting from $25/mo extra. Domain registration from $20/yr.</p>
     </div>
   </section>
 
-  <!-- Custom -->
+  <!-- Custom pricing calculator -->
+  <CustomPricingCalculator />
+
+  <!-- Get Your Custom Quote CTA -->
   <section class="section-padding">
     <div class="container-custom text-center">
-      <div class="glass rounded-2xl p-12 max-w-3xl mx-auto animate-on-scroll">
-        <h2 class="text-3xl font-heading font-bold mb-4">Need Something <span class="gradient-text">Bigger?</span></h2>
-        <p class="text-muted-200 mb-8">E-commerce stores, booking systems, custom features — we'll build exactly what you need.</p>
-        <a href="/get-a-quote" class="btn-primary text-lg">Get a Custom Quote</a>
+      <div class="relative glass rounded-2xl p-12 max-w-3xl mx-auto animate-on-scroll overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 to-neon-purple/5 pointer-events-none"></div>
+        <div class="relative z-10">
+          <p class="section-label mb-4">Ready to get started?</p>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
+            Get your <span class="gradient-text">custom quote</span> now
+          </h2>
+          <p class="text-muted-200 mb-8 max-w-xl mx-auto">
+            Tell us about your project and we'll come back with a fixed one-off price — no obligation, no pushy sales calls.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/get-a-quote" class="btn-primary text-lg">Get a Free Quote</a>
+            <a href="/contact" class="btn-secondary text-lg">Ask a Question</a>
+          </div>
+          <p class="text-xs text-muted-400 mt-6">Typically reply within 1 business day · No lock-in contracts</p>
+        </div>
       </div>
     </div>
   </section>
@@ -90,6 +94,7 @@ import { faqs } from '../data/faq';
       </div>
     </div>
   </section>
+
 </BaseLayout>
 
 <script>

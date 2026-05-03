@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Web Designer Auckland — Professional Website Design | SiteGenius"
+  description="Looking for a web designer in Auckland? SiteGenius builds fast, professional websites for Auckland businesses. From $499 one-off fee. No lock-in contracts."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Auckland Web Design</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Web Designer <span class="gradient-text">Auckland</span> — Sites That Actually Win Customers
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Professional website design for Auckland businesses. Fast turnaround, fair pricing, no lock-in. Built by a team with real industry experience across real estate, automotive, and trades.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Auckland is one of the most competitive business markets in New Zealand. Whether you're in Ponsonby, Newmarket, Takapuna, Manukau, or anywhere in between — if your website doesn't make a strong first impression, customers are clicking over to your competition within seconds.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Why Auckland Businesses Need a Proper Web Designer</h2>
+        <p class="text-muted-200 mb-6">
+          There's a big difference between a website that exists and a website that works. DIY builders like Wix or Squarespace can get you online — but they rarely get you customers. They're slow, they look generic, and they don't rank well on Google.
+        </p>
+        <p class="text-muted-200 mb-6">
+          A professional web designer in Auckland understands the local market, the way Auckland customers search and behave online, and how to position your business to stand out in a crowded city.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What We Build for Auckland Businesses</h2>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            'Custom designed — not a template',
+            'Mobile-first and fully responsive',
+            'Fast loading — under 2 seconds',
+            'SEO optimised from day one',
+            'Google Business Profile setup',
+            'Contact forms and lead capture',
+            'Ongoing support included',
+            'No lock-in contracts',
+          ].map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Industries We Serve in Auckland</h2>
+        <p class="text-muted-200 mb-6">
+          Our team has real-world experience across multiple industries — which means we understand your customers, not just your code.
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Trades & Services</strong> — Plumbers, electricians, builders, cleaners, landscapers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Real Estate</strong> — Agents, property managers, developers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Automotive</strong> — Car dealers, mechanics, detailing, tyre shops</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Retail & E-commerce</strong> — Online stores, local shops, product brands</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Health & Beauty</strong> — Clinics, salons, gyms, wellness businesses</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Professional Services</strong> — Accountants, lawyers, consultants, coaches</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">How Much Does Web Design Cost in Auckland?</h2>
+        <p class="text-muted-200 mb-6">
+          Web design in Auckland can range from $500 for a basic site to $20,000+ at a large agency. Most small businesses don't need to spend anywhere near that.
+        </p>
+        <p class="text-muted-200 mb-6">
+          At SiteGenius, we offer two options:
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Monthly subscription from $79/mo</strong> — includes design, hosting, updates, and support. No upfront cost.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">One-time custom build</strong> — for businesses that want to own their site outright. Priced per project.</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Why Choose SiteGenius Over Other Auckland Web Designers?</h2>
+        <p class="text-muted-200 mb-6">
+          Most web designers in Auckland work for agencies — which means higher prices, longer timelines, and an account manager between you and the person actually building your site.
+        </p>
+        <p class="text-muted-200 mb-6">
+          At SiteGenius, you deal directly with the team. No middlemen, no inflated quotes, no waiting weeks for a callback. We've worked in real estate, automotive, and sales — so we understand your business from both sides of the screen.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'How long does it take to build a website in Auckland?', a: 'Most of our projects are completed within 7–14 days. Larger or more complex builds may take 3–4 weeks.' },
+            { q: 'Do you work with businesses outside Auckland?', a: 'Yes — we work with businesses across New Zealand and internationally. Most of our process is remote-friendly.' },
+            { q: 'Will my site show up on Google?', a: 'Every site we build is SEO-optimised from day one. We also help you set up your Google Business Profile for local search visibility.' },
+            { q: 'Can I update my own website after it\'s built?', a: 'Yes. We build on platforms that allow easy content updates, and we offer ongoing support plans if you\'d prefer us to handle it.' },
+            { q: 'Do you offer website hosting in NZ?', a: 'Yes. All our sites include fast, secure hosting with global CDN — no need to sort that separately.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Ready to grow your Auckland business online?"
+    description="Get a free quote today — no obligation, no hard sell."
+    href="/get-a-quote"
+    label="Get Your Free Quote"
+  />
+</BaseLayout>

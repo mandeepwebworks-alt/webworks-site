@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Best Website Builder NZ — Custom Professional Websites | SiteGenius"
+  description="Tired of DIY website builders? SiteGenius is NZ's best alternative — professional custom websites from $499, one-off fee. Built for you, not by you."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Best Website Solution NZ</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          The Best <span class="gradient-text">Website Builder in NZ</span> Isn't a Builder — It's a Team
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Wix, Squarespace, and Weebly are fine if you have time to spare and don't mind a generic result. But if you want a website that actually wins you customers, SiteGenius is the better choice — from $499, one-off fee.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See What We Build</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Every year, thousands of NZ business owners spend weeks trying to build their own website on Wix or Squarespace — only to end up with something that looks like everyone else's site, loads slowly, and doesn't show up on Google. There's a better path.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">DIY Website Builders vs SiteGenius — The Real Comparison</h2>
+        <div class="overflow-x-auto mb-8 not-prose">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="text-left px-4 py-3 text-muted-400 font-medium"></th>
+                <th class="px-4 py-3 text-muted-300 font-medium text-center">Wix / Squarespace</th>
+                <th class="px-4 py-3 text-neon-cyan font-bold text-center bg-neon-cyan/[0.06]">SiteGenius</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { label: 'Your time required', diy: '20–60+ hours', us: 'Almost none' },
+                { label: 'Design quality', diy: 'Template-based', us: 'Custom to your brand' },
+                { label: 'Google ranking', diy: 'Poor to average', us: 'SEO-optimised from day one' },
+                { label: 'Load speed', diy: 'Slow to average', us: 'Under 2 seconds' },
+                { label: 'Support', diy: 'Help articles & chatbots', us: 'Real people, fast response' },
+                { label: 'Monthly cost', diy: '$25–$55/mo', us: 'From $79/mo (fully managed)' },
+                { label: 'Looks unique?', diy: 'Rarely', us: 'Always' },
+              ].map(row => (
+                <tr class="border-b border-white/[0.04]">
+                  <td class="px-4 py-3 text-muted-300 font-medium">{row.label}</td>
+                  <td class="px-4 py-3 text-muted-400 text-center">{row.diy}</td>
+                  <td class="px-4 py-3 text-neon-cyan font-semibold text-center bg-neon-cyan/[0.04]">{row.us}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What Makes a Great Business Website in NZ?</h2>
+        <p class="text-muted-200 mb-6">
+          A great website isn't just one that looks good — it needs to perform. For NZ businesses, that means:
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Speed</strong> — Kiwi customers won't wait. If your site takes more than 3 seconds to load, most will leave.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Mobile-first</strong> — Over 70% of NZ web traffic is now on mobile devices.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Local SEO</strong> — Showing up in Google searches for your suburb or city is critical for local businesses.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Clear calls to action</strong> — Every page should make it obvious how to contact you or book a service.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Trust signals</strong> — Reviews, photos, team info — Kiwis do their research before they call.</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Who We Build Websites For</h2>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {['Tradies', 'Real Estate Agents', 'Car Dealers', 'Restaurants & Cafes', 'Cleaners', 'Gyms & Fitness', 'Hair & Beauty', 'Accountants', 'Lawyers', 'Coaches', 'Retailers', 'Healthcare', 'Landscapers', 'Builders', 'Photographers'].map(tag => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{tag}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Popular Website Builders in NZ — Honest Review</h2>
+        <div class="space-y-4 mb-8">
+          {[
+            { name: 'Wix', verdict: 'Good for very simple sites. Easy to use but slow, hard to rank on Google, and looks like everyone else.', rating: '⭐⭐⭐' },
+            { name: 'Squarespace', verdict: 'Beautiful templates. Better design than Wix but still limited, still slow, still not built for local SEO.', rating: '⭐⭐⭐' },
+            { name: 'WordPress', verdict: 'Powerful but complex. Needs a developer to do it properly. Plugins can cause security and speed issues.', rating: '⭐⭐⭐⭐' },
+            { name: 'Shopify', verdict: 'Best for e-commerce. Overkill for service businesses. Monthly costs add up quickly.', rating: '⭐⭐⭐⭐' },
+            { name: 'SiteGenius', verdict: 'Custom-built, fast, SEO-ready, and fully managed. The best option if you want results without doing it yourself.', rating: '⭐⭐⭐⭐⭐' },
+          ].map(item => (
+            <div class="glass rounded-xl p-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-heading font-bold text-muted-100">{item.name}</h3>
+                <span class="text-sm">{item.rating}</span>
+              </div>
+              <p class="text-sm text-muted-300 leading-relaxed">{item.verdict}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Is SiteGenius actually better than Wix for NZ businesses?', a: 'For most businesses, yes. Wix is a great tool for hobby projects or very simple needs. If you want a site that gets found on Google, converts visitors into customers, and represents your brand professionally, a custom-built site wins every time.' },
+            { q: 'How much does SiteGenius cost compared to website builders?', a: 'DIY builders cost $25–$55/month and don\'t include design, SEO, or support. SiteGenius starts from $499 one-off and includes everything — custom design, SEO setup, and a site you own forever.' },
+            { q: 'How long does it take to get my site live?', a: '7–14 days for most projects. Compare that to the 20–60 hours you\'d spend trying to figure out a builder yourself.' },
+            { q: 'Can I switch from my current website builder to SiteGenius?', a: 'Yes. We migrate and rebuild sites regularly. We\'ll make sure nothing important is lost in the transition.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Stop building it yourself. Let us do it properly."
+    description="Free quote — we'll tell you exactly what your business needs."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Website Design Hamilton — Professional Custom Sites | SiteGenius"
+  description="Professional website design for Hamilton & Waikato businesses from $499. One-off fee, custom-built, SEO-optimised. Get found on Google in Hamilton."
+>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SiteGenius",
+    "url": "https://sitegenius.co.nz",
+    "description": "Professional website design for Hamilton and Waikato businesses from $499.",
+    "areaServed": { "@type": "City", "name": "Hamilton" },
+    "address": { "@type": "PostalAddress", "addressCountry": "NZ" },
+    "priceRange": "$$"
+  })} />
+
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Website Design Hamilton</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Website Design <span class="gradient-text">Hamilton</span> — Built for Waikato Businesses
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Hamilton is growing fast. Your website should too. SiteGenius builds professional, fast, custom websites for Hamilton and Waikato businesses — one-off fee from $499, no monthly lock-in.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Hamilton is New Zealand's fourth-largest city and one of its fastest growing. With a booming trades sector, strong agricultural services, and a growing tech and education scene — businesses in Hamilton need a proper online presence to stay competitive.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Hamilton & Waikato Areas We Serve</h2>
+        <p class="text-muted-200 mb-6">We work fully remotely. If you're ever in Auckland or Melbourne, we're always happy to meet in person.</p>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {[
+            'Hamilton CBD', 'Frankton', 'Te Rapa', 'Chartwell', 'Rototuna', 'Flagstaff', 'Rotokauri', 'Nawton', 'Dinsdale',
+            'Hillcrest', 'Silverdale', 'Claudelands', 'Fairfield', 'Peacocke', 'Glenview', 'Enderley',
+            'Cambridge', 'Te Awamutu', 'Morrinsville', 'Matamata', 'Te Aroha', 'Huntly', 'Ngaruawahia', 'Raglan',
+            'Taupiri', 'Mercer', 'Pokeno', 'Tokoroa', 'Putaruru', 'Otorohanga', 'Te Kuiti',
+          ].map(s => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{s}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Industries We Serve in Hamilton</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Trades & Construction</strong> — Builders, plumbers, electricians, roofers, landscapers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Agriculture & Rural</strong> — Farm supplies, rural contractors, agricultural services</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Automotive</strong> — Car dealers, mechanics, detailers across the Waikato</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Professional Services</strong> — Accountants, lawyers, financial advisers, consultants</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Health & Wellness</strong> — Clinics, gyms, physios, beauty salons</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Hospitality</strong> — Cafes, restaurants, catering businesses</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Pricing for Hamilton Businesses</h2>
+        <div class="grid sm:grid-cols-3 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$499', desc: '1-page site. One-off fee, yours forever.' },
+            { plan: 'Essential', price: '$1,499', desc: '3–4 pages, CMS, SEO setup. One-off fee.' },
+            { plan: 'Professional', price: '$2,499', desc: '5–7 pages, blog, advanced SEO. One-off fee.' },
+          ].map(p => (
+            <div class="glass rounded-xl p-6">
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-3">{p.price}</p>
+              <p class="text-sm text-muted-300">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Can we meet in person?', a: 'Everything can be done 100% remotely — video calls and a simple review process. If you\'re ever up in Auckland, we\'re happy to meet in person there. Hamilton clients typically find a quick video call gets things started perfectly.' },
+            { q: 'How long does a Hamilton website take to build?', a: 'Most projects go live within 7–14 days from when we receive your information.' },
+            { q: 'Will my site show up in Hamilton Google searches?', a: 'Yes. Every site includes local SEO targeting your Hamilton suburb and industry keywords. We also help with Google Business Profile setup.' },
+            { q: 'What if I already have a website?', a: 'We can redesign or rebuild your existing site. We\'ll assess it and recommend the best path forward.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Let's grow your Hamilton business online."
+    description="Free quote — no obligation, no pressure."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

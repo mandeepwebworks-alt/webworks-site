@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Small Business Website NZ — Affordable Professional Sites | SiteGenius"
+  description="Small business websites for NZ businesses from $499. Custom-designed, fast, SEO-optimised. One-off fee, yours forever — without the agency price tag."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Small Business Websites NZ</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Small Business Websites <span class="gradient-text">New Zealand</span> — Professional Results, Small Business Prices
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Your small business deserves a website that looks big. SiteGenius builds professional, fast, custom websites for NZ small businesses — one-off fee from $499, yours to keep forever.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/pricing" class="btn-secondary">View Pricing</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Small businesses in New Zealand face a unique challenge: you need a professional online presence to compete, but you can't afford $10,000 agency fees. SiteGenius was built specifically for this gap — professional quality at a price that actually makes sense for small businesses.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What Does a Small Business Website Actually Need?</h2>
+        <p class="text-muted-200 mb-6">
+          You don't need a 50-page site. You need a focused, well-designed website that does a few things really well:
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            { title: 'A clear homepage', desc: 'What you do, where you are, and how to contact you — immediately obvious.' },
+            { title: 'Service or product pages', desc: 'What you offer, at what price, and why customers should choose you.' },
+            { title: 'Trust signals', desc: 'Reviews, credentials, photos, and team info that make people feel confident.' },
+            { title: 'Contact & lead capture', desc: 'Phone number, contact form, booking link — make it easy to reach you.' },
+            { title: 'Google presence', desc: 'Showing up when people search for your service in your town or suburb.' },
+            { title: 'Mobile experience', desc: 'Most customers are on their phones. Your site needs to be perfect on mobile.' },
+          ].map(f => (
+            <div class="glass rounded-xl p-5">
+              <p class="font-bold text-muted-100 mb-1 text-sm">{f.title}</p>
+              <p class="text-sm text-muted-300 leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Why Small NZ Businesses Choose SiteGenius</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">One-off fee, no monthly surprises</strong> — Pay once and own your website outright from $499.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Done for you</strong> — You don't touch a thing. We handle design, hosting, setup, and updates.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Built for Google</strong> — SEO setup from day one, including local search targeting for your suburb and city.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Real support</strong> — You get a team who answers you directly, not a help desk ticketing system.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">No lock-in contracts</strong> — One-off fee means no ongoing commitment and no cancellation worries.</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Small Business Website Examples We've Built</h2>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {[
+            'Plumbing & Gas', 'Electrical', 'Landscaping', 'Cleaning Services', 'Painting & Decorating',
+            'Personal Training', 'Yoga Studio', 'Hair Salon', 'Barber Shop', 'Nail Technician',
+            'Mortgage Broker', 'Bookkeeper', 'Driving Instructor', 'Pest Control', 'Mobile Mechanic'
+          ].map(tag => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{tag}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Pricing for Small NZ Businesses</h2>
+        <p class="text-muted-200 mb-6">
+          We designed our pricing specifically for small businesses. Pay once, own your website forever — no monthly fees required.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$499', highlight: false, features: ['1-page website', 'Custom design', 'Contact form', 'SEO basics', 'Google Analytics', '1 round of revisions', '2-week turnaround', 'One-off fee'] },
+            { plan: 'Essential', price: '$1,499', highlight: true, features: ['3–4 page website', 'Custom design & CMS', 'Full SEO setup', 'Google Analytics & Search Console', '2 rounds of revisions', 'Social media integration', '3-week turnaround', 'One-off fee'] },
+          ].map(p => (
+            <div class={`glass rounded-xl p-6 ${p.highlight ? 'border border-neon-cyan/30' : ''}`}>
+              {p.highlight && <span class="text-xs text-neon-cyan font-bold uppercase tracking-wider mb-2 block">Most Popular</span>}
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-4">{p.price}</p>
+              <ul class="space-y-2">
+                {p.features.map(f => (
+                  <li class="flex items-center gap-2 text-sm text-muted-300">
+                    <svg class="w-4 h-4 text-neon-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">The Real Cost of NOT Having a Proper Website</h2>
+        <p class="text-muted-200 mb-6">
+          It's tempting to put the website off — but consider what it's costing you every month:
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span>Customers who search for you online and find your competitor instead</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span>Lost trust — businesses without websites are perceived as less professional</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span>No 24/7 presence — a website sells for you while you sleep</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span>Dependence on referrals only — growth is capped without digital channels</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'I\'m a sole trader. Is SiteGenius right for me?', a: 'Absolutely. Most of our clients are sole traders and micro-businesses. The Starter package at $499 (one-off) is designed exactly for you — a professional site without agency prices.' },
+            { q: 'How long does it take to get my website live?', a: '7–14 days from when we receive your info. You\'ll have a proper website faster than you\'d finish building one yourself on a DIY platform.' },
+            { q: 'What if I don\'t have any content or photos ready?', a: 'No worries. We\'ll guide you on what we need, help write copy if needed, and use professional stock imagery where required. We make the process easy.' },
+            { q: 'What happens if my business situation changes?', a: 'Since you own the website outright, you\'re not locked into anything. Hosting is the only ongoing cost, and that can be paused or transferred if needed.' },
+            { q: 'Do you help with Google My Business too?', a: 'Yes. On Essential and Professional packages we help you set up and optimise your Google Business Profile — critical for local search visibility in your suburb and city.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Your small business deserves a big online presence."
+    description="Get a free quote — no obligation, no jargon."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Website Design Auckland — Fast, Professional & Affordable | SiteGenius"
+  description="Professional website design in Auckland from $499. One-off fee, custom websites for Auckland businesses. SEO-optimised, mobile-first, no lock-in."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Website Design Auckland</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          Website Design <span class="gradient-text">Auckland</span> — Built to Win Customers
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Auckland businesses need more than a nice-looking website — they need one that shows up on Google, loads fast, and turns visitors into leads. That's exactly what SiteGenius builds.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            Auckland is one of the most competitive markets in New Zealand. If your website isn't fast, professional, and visible on Google — you're invisible to the customers searching for you right now. SiteGenius helps Auckland businesses fix that.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Why Your Auckland Business Needs a Proper Website</h2>
+        <p class="text-muted-200 mb-6">
+          Over 90% of consumers research a business online before making contact. In Auckland, that number is even higher — this is one of the most digitally active cities in New Zealand. A weak website doesn't just fail to impress — it actively costs you customers.
+        </p>
+        <p class="text-muted-200 mb-6">
+          A properly built website in Auckland needs to:
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Load in under 2 seconds</strong> — Auckland customers won't wait, and neither will Google.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Rank locally</strong> — Show up in searches like "plumber Auckland" or "accountant Newmarket".</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Work perfectly on mobile</strong> — Over 70% of local searches happen on phones.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Build trust immediately</strong> — Reviews, photos, and clear information make people pick up the phone.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Have a clear call to action</strong> — Every page should make it easy to contact you or book.</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Auckland Suburbs We Work With</h2>
+        <p class="text-muted-200 mb-6">We serve businesses across the full Auckland region — from the CBD to the outer suburbs. And yes, if you're in Auckland we're happy to meet in person too.</p>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {[
+            'Auckland CBD', 'Ponsonby', 'Grey Lynn', 'Newmarket', 'Parnell', 'Remuera', 'Epsom', 'Mt Eden', 'Kingsland', 'Avondale', 'New Lynn',
+            'Henderson', 'Glen Eden', 'Waitakere', 'Massey', 'Hobsonville', 'Whenuapai', 'Kumeu', 'Helensville',
+            'Takapuna', 'Devonport', 'Milford', 'Forrest Hill', 'Albany', 'North Harbour', 'Silverdale', 'Orewa', 'Whangaparaoa', 'Dairy Flat',
+            'Manukau', 'Papatoetoe', 'Otahuhu', 'Mangere', 'Favona', 'Flat Bush', 'Botany', 'Howick', 'Pakuranga', 'Highland Park',
+            'Papakura', 'Pukekohe', 'Waiuku', 'Beachlands', 'Clevedon', 'Hunua',
+            'Mt Roskill', 'Onehunga', 'Royal Oak', 'Panmure', 'Mt Wellington', 'Glen Innes', 'Ellerslie',
+          ].map(suburb => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{suburb}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Industries We Design For in Auckland</h2>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Trades & Home Services</strong> — Plumbers, builders, electricians, painters, landscapers, cleaners</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Automotive</strong> — Car dealers, mechanics, detailers, tyre shops, panel beaters</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Real Estate & Property</strong> — Agents, property managers, developers, valuers</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Health & Wellness</strong> — Physiotherapists, dentists, gyms, personal trainers, salons, spas</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Hospitality & Food</strong> — Cafes, restaurants, catering, food trucks, bakeries</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Professional Services</strong> — Accountants, lawyers, mortgage brokers, consultants, coaches</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">How Much Does Website Design Cost in Auckland?</h2>
+        <p class="text-muted-200 mb-6">
+          The cost of website design in Auckland ranges dramatically — from $500 for a basic template build to $20,000+ at a full-service agency. Most small and medium Auckland businesses don't need to spend anywhere near that.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$499', desc: '1-page site for sole traders getting online fast. One-off fee, yours forever.' },
+            { plan: 'Essential', price: '$1,499', desc: '3–4 page small business site. Custom design, CMS, SEO. One-off fee.' },
+            { plan: 'Professional', price: '$2,499', desc: '5–7 pages with blog, advanced SEO, and performance optimisation. One-off fee.' },
+            { plan: 'Custom', price: 'Get a Quote', desc: 'E-commerce, bookings, custom features. Fixed price upfront.' },
+          ].map(p => (
+            <div class="glass rounded-xl p-6">
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-3">{p.price}</p>
+              <p class="text-sm text-muted-300 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Our Auckland Website Design Process</h2>
+        <div class="space-y-4 mb-8 not-prose">
+          {[
+            { step: '01', title: 'Free Consultation', desc: 'We learn about your Auckland business, your goals, and what your customers need to see.' },
+            { step: '02', title: 'Design & Build', desc: 'We design and build your site — custom layout, your branding, your content. No templates.' },
+            { step: '03', title: 'Review & Refine', desc: 'You review the site and we make adjustments until you\'re completely happy.' },
+            { step: '04', title: 'Launch & Grow', desc: 'We launch your site and stay on hand for updates, support, and any future changes.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-5 flex items-start gap-5">
+              <span class="text-neon-cyan font-black text-2xl font-heading">{item.step}</span>
+              <div>
+                <p class="font-bold text-muted-100 mb-1">{item.title}</p>
+                <p class="text-sm text-muted-300">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'How long does website design take in Auckland?', a: 'Most projects are completed and live within 7–14 days. For larger builds with custom functionality, 3–4 weeks is typical.' },
+            { q: 'Can we meet in person?', a: 'Yes! If you\'re based in Auckland, we\'re happy to meet in person. All our work can be done 100% remotely — video calls, shared docs, and a simple review platform — but we\'re always up for a face-to-face catch-up in Auckland if that\'s your preference.' },
+            { q: 'Will my Auckland website show up on Google?', a: 'Yes. Every site we build is SEO-optimised from day one, including local SEO setup targeting Auckland suburbs and your specific industry keywords.' },
+            { q: 'What happens after my site goes live?', a: 'You own it outright. We offer optional hosting and care plans to keep things running smoothly — but there\'s no lock-in. We\'re here when you need us.' },
+            { q: 'Can you redesign my existing Auckland website?', a: 'Absolutely. We do redesigns regularly. If your current site is slow, outdated, or not converting — we\'ll assess it and tell you exactly what needs to change.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Ready to grow your Auckland business online?"
+    description="Free quote, no obligation. We'll tell you exactly what your site needs."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>

@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/sections/CTABanner.astro';
+---
+<BaseLayout
+  title="Best Website Maker NZ — Professional Websites From $499 | SiteGenius"
+  description="Looking for the best website maker in NZ? SiteGenius builds professional, fast websites for New Zealand businesses from $499 one-off. Better than any DIY website maker."
+>
+  <article class="pt-32 pb-24">
+    <div class="container-custom max-w-4xl">
+
+      <header class="mb-16">
+        <span class="text-neon-cyan font-bold tracking-widest uppercase text-sm mb-4 block">Best Website Maker NZ</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          The Best <span class="gradient-text">Website Maker in NZ</span> Does the Work For You
+        </h1>
+        <p class="text-xl text-muted-200 max-w-3xl">
+          Skip the drag-and-drop frustration. SiteGenius is New Zealand's best website solution — we build your site from scratch, fast, and for less than you'd expect.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="/get-a-quote" class="btn-primary">Get a Free Quote</a>
+          <a href="/portfolio" class="btn-secondary">See Our Work</a>
+        </div>
+      </header>
+
+      <div class="prose prose-lg prose-invert max-w-none">
+
+        <div class="glass p-8 mb-12 rounded-3xl border border-neon-cyan/20">
+          <p class="text-lg font-medium text-muted-100 leading-relaxed m-0">
+            There are dozens of website makers on the market — Wix, Squarespace, Weebly, GoDaddy. They all promise to get you online quickly. And they do. The problem? They also give you a generic, slow-loading site that Google ignores and customers distrust.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What's Wrong With DIY Website Makers?</h2>
+        <p class="text-muted-200 mb-6">
+          Website makers are built for simplicity — which means they're full of limitations. Here's what you're not being told:
+        </p>
+        <ul class="space-y-3 mb-8 text-muted-200">
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">They're slow</strong> — Most DIY sites score poorly on Google's Core Web Vitals, which directly affects your ranking.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">They look generic</strong> — Templates are shared by thousands of businesses. Nothing about your site will stand out.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">SEO is an afterthought</strong> — Built-in SEO tools are surface-level at best. Real Google ranking requires proper technical SEO.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">You lose hours</strong> — "Easy" builders still take 20–60 hours to get right. Your time is worth money.</span></li>
+          <li class="flex items-start gap-3"><span class="text-neon-cyan font-bold mt-1">→</span><span><strong class="text-muted-100">Costs creep up</strong> — Add-ons, premium plugins, domain, email — DIY builders aren't as cheap as they advertise.</span></li>
+        </ul>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">SiteGenius vs DIY Website Makers</h2>
+        <div class="overflow-x-auto mb-8 not-prose">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="text-left px-4 py-3 text-muted-400 font-medium"></th>
+                <th class="px-4 py-3 text-muted-300 font-medium text-center">DIY Website Maker</th>
+                <th class="px-4 py-3 text-neon-cyan font-bold text-center bg-neon-cyan/[0.06]">SiteGenius</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { label: 'Time to launch', diy: '20–60+ hours of your time', us: '7–14 days, zero effort from you' },
+                { label: 'Design', diy: 'Template shared by thousands', us: 'Custom built for your brand' },
+                { label: 'Speed', diy: 'Slow to average', us: 'Under 2 seconds' },
+                { label: 'Google ranking', diy: 'Poor', us: 'SEO-optimised from day one' },
+                { label: 'Monthly cost', diy: '$25–$55/mo + add-ons', us: 'From $79/mo, all-inclusive' },
+                { label: 'Support', diy: 'Ticket system or chatbot', us: 'Real team, fast response' },
+              ].map(row => (
+                <tr class="border-b border-white/[0.04]">
+                  <td class="px-4 py-3 text-muted-300 font-medium">{row.label}</td>
+                  <td class="px-4 py-3 text-muted-400 text-center">{row.diy}</td>
+                  <td class="px-4 py-3 text-neon-cyan font-semibold text-center bg-neon-cyan/[0.04]">{row.us}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">The Best Website Maker NZ Has — Is One That Does It For You</h2>
+        <p class="text-muted-200 mb-6">
+          The smartest business owners in New Zealand aren't spending weekends wrestling with drag-and-drop builders. They're getting professionals to do it properly — at a price that makes sense.
+        </p>
+        <p class="text-muted-200 mb-6">
+          SiteGenius handles everything: design, hosting, setup, SEO, and ongoing support. You get a site that looks great, loads fast, and actually brings in customers — without touching a single line of code.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">What You Get With SiteGenius</h2>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8 not-prose">
+          {[
+            'Custom design — unique to your brand',
+            'Fast loading — under 2 seconds',
+            'Mobile-first and fully responsive',
+            'SEO setup — structure, meta, schema',
+            'NZ-based hosting included',
+            'Contact forms and lead capture',
+            'Google Analytics connected',
+            'Ongoing updates and support',
+            'No lock-in contracts',
+            'Real humans — not chatbots',
+          ].map(f => (
+            <div class="glass rounded-lg p-4 flex items-start gap-3">
+              <svg class="w-5 h-5 text-neon-cyan flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-sm text-muted-200">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Who We Build For</h2>
+        <div class="flex flex-wrap gap-2 mb-8 not-prose">
+          {['Tradies', 'Builders', 'Plumbers', 'Electricians', 'Landscapers', 'Real Estate Agents', 'Car Dealers', 'Mechanics', 'Hair & Beauty', 'Gyms', 'Accountants', 'Coaches', 'Cleaners', 'Restaurants', 'Photographers', 'Consultants'].map(tag => (
+            <span class="glass rounded-lg px-3 py-1.5 text-sm text-muted-200">{tag}</span>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Pricing — Simple and Transparent</h2>
+        <div class="grid sm:grid-cols-3 gap-6 mb-8 not-prose">
+          {[
+            { plan: 'Starter', price: '$79/mo', desc: 'Up to 5 pages. Custom design, hosting, domain, support.' },
+            { plan: 'Growth', price: '$149/mo', desc: 'More pages, blog, local SEO, priority support.' },
+            { plan: 'One-Time Build', price: 'From $999', desc: 'Own your site. Fixed price based on your scope.' },
+          ].map(p => (
+            <div class="glass rounded-xl p-6">
+              <p class="text-neon-cyan font-bold text-sm uppercase tracking-wider mb-1">{p.plan}</p>
+              <p class="text-3xl font-black text-muted-100 mb-3">{p.price}</p>
+              <p class="text-sm text-muted-300 leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-6 mb-12">
+          {[
+            { q: 'Is SiteGenius a website maker or a web agency?', a: 'Neither — and both. We\'re a specialist studio that builds custom websites for NZ businesses. No cookie-cutter templates, no agency-level overhead. Just great websites at a fair price.' },
+            { q: 'How is SiteGenius different from Wix or Squarespace?', a: 'Wix and Squarespace give you tools to build your own site. SiteGenius builds it for you. Our sites are faster, more unique, and better optimised for Google — and we handle everything so you don\'t have to.' },
+            { q: 'How quickly can I get a website?', a: 'Most projects are live within 7–14 days. That\'s faster than most DIY builds, and you don\'t have to do any of the work.' },
+            { q: 'What if I already have a website I built myself?', a: 'We can redesign or rebuild it. Many of our clients come to us after struggling with DIY builders for months. We\'ll assess your current site and recommend the best path forward.' },
+            { q: 'Do I need to sign a long contract?', a: 'No. Monthly plans have no lock-in. Cancel with 30 days notice. We keep clients because of our quality — not contracts.' },
+          ].map(item => (
+            <div class="glass rounded-xl p-6">
+              <h3 class="font-heading font-bold text-muted-100 mb-3">{item.q}</h3>
+              <p class="text-muted-200 text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <CTABanner
+    title="The best website maker in NZ? It's one that does it for you."
+    description="Get a free quote today — no obligation, no jargon, no hard sell."
+    href="/get-a-quote"
+    label="Get a Free Quote"
+  />
+</BaseLayout>
