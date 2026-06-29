@@ -11,21 +11,12 @@ export interface Project {
 export const projects: Project[] = [
   // ── Real Client Sites ──
   {
-    title: 'Online Appraisal',
-    category: 'Real Estate',
-    description: 'Instant property valuation platform for NZ homeowners. Get accurate, data-driven appraisals online in seconds.',
-    tags: ['Web App', 'API Integration', 'SEO'],
-    gradient: 'from-cyan-500/30 via-teal-500/20 to-slate-900',
-    url: 'https://onlineappraisal.co.nz',
-    live: true,
-  },
-  {
-    title: 'Citizenship NZ',
-    category: 'Tool',
-    description: 'Free NZ citizenship eligibility calculator for residents. Enter your visa date, log overseas trips, and instantly see when you can apply for citizenship.',
+    title: 'Go Australia',
+    category: 'Relocation',
+    description: 'Helping Kiwis make a smooth move to Australia. Expert guidance on visas, housing, jobs, and settling in Down Under.',
     tags: ['Web Design', 'Lead Gen', 'SEO'],
-    gradient: 'from-blue-600/30 via-indigo-500/20 to-slate-900',
-    url: 'https://citizenship.co.nz',
+    gradient: 'from-green-600/30 via-yellow-500/20 to-slate-900',
+    url: 'https://goaustralia.co.nz',
     live: true,
   },
   {
@@ -115,4 +106,4 @@ export const projects: Project[] = [
   },
 ];
 
-export const categories = ['All', 'Real Estate', 'Tool', 'Automotive', 'Cleaning', 'Beauty', 'Health', 'Hospitality', 'Trade', 'Retail', 'Professional'];
+export const categories = ['All', 'Relocation', 'Automotive', 'Cleaning', 'Beauty', 'Health', 'Hospitality', 'Trade', 'Retail', 'Professional'];
